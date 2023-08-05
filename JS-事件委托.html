@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">        
+        <li>
+            1111
+            <button>add</button>
+        </li>
+    </ul>
+
+    <script>
+        //事件委托，区分点击的是哪个子元素
+        list.onclick=function(evt){
+            console.log(evt.target||evt.srcElement)
+        }
+    </script>
+</body>
+</html>

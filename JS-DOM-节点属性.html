@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        hello world
+        <!-- dadada -->
+        <div>11111</div>
+    </div>
+
+    <script>
+        var obox=document.querySelector(".box")
+        console.log(obox.childNodes)
+
+        //nodetype  1.元素节点 2.属性节点 3.文本节点 8.注释节点
+        // nodeName 元素名称  例如：div text comment
+
+        for(var i=0;i<obox.childNodes.length;i++){
+            console.log(obox.childNodes[i].nodeName)//获取所有的元素节点
+            if(obox.childNodes[i].nodeType===1){//等于元素标签节点
+                console.log(obox.childNodes[i])
+            }
+        }
+
+        console.log(obox.attributes[0].nodeName)//属性节点
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function CreateObj(name){
+        //     this.name=name
+        // }
+
+        // CreateObj.prototype.say=function(){
+        //     console.log(this.name,"hello")
+        // }
+
+        //class写法  底层就是原型链或构造函数原型的写法
+        class CreateObj{
+            constructor(name){
+                this.name=name
+            }
+
+            say(){
+                console.log(this.name,"hello")
+            }
+        }
+
+        var obj=new CreateObj("xym")
+        console.log(obj)
+
+    </script>
+</body>
+</html>

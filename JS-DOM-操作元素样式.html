@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="width: 100px; color: black; background-color: red;">11111</div>
+    <script>
+        //行内样式 style 只能获取行内样式
+        console.log(box.style.width)
+        console.log(box.style["background-color"])
+        console.log(box.style.backgroundColor)
+
+        //改style
+        box.style.width="500px"
+        box.style.backgroundColor="blue"
+
+        //getComputedStyle 内部、外部样式、行内样式都可以获取，但不能改样式  低版本用这个currentStyle
+        var obox=document.getElementById("box")
+        console.log(window.getComputedStyle(obox).height)
+        console.log(window.getComputedStyle(obox)["background-color"])
+
+
+
+
+    </script>
+</body>
+</html>

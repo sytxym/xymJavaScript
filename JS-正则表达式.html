@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="mytext">
+        <input type="number">
+        <input type="submit">
+    </form>
+    <script>
+
+
+        /*  最基本的元字符有:
+ 
+         1. `.` - 匹配任何单个字符。
+ 
+         2. `*` - 匹配前面的子表达式零次或多次。
+ 
+         3. `+` - 匹配前面的子表达式一次或多次。
+ 
+         4. `?` - 匹配前面的子表达式零次或一次。
+ 
+         5. `^` - 匹配输入字符串的开始位置。
+ 
+         6. `$` - 匹配输入字符串的结束位置。
+ 
+         7. `[]` - 字符集。匹配包含在方括号中的任何单个字符。
+ 
+         8. `|` - 匹配左右任意一个表达式。
+ 
+         9. `\` - 转义符。
+ 
+         10. `{ } ` - 限定符。匹配指定范围或数量的前面的字符。
+ 
+         11. `()` - 标记子表达式的开始和结束位置。
+ 
+         12. `\d` - 匹配任何数字。
+    
+         13. `\s` - 匹配任何空白字符。
+ 
+         14. `\w` - 匹配任何字母数字字符。
+  
+         15. `\b` - 匹配单词边界。
+ 
+         这些是正则表达式中最基本和最常用的元字符。它们可以组合在一起来定义复杂的匹配模式。
+ 
+         除了这些基本元字符外,还有一些用于控制正则表达式行为的标志,如:`g`(全局匹配)、`i`(忽略大小写)等。 */
+  
+        /* 两种创建方式
+
+        1. var reg=/abc/
+
+        2. var reg=new RegExp("abc") */
+
+
+
+        // JavaScript中有几个主要的函数用来匹配正则表达式:
+
+        // 1. test() - 测试字符串是否匹配正则表达式。如果匹配返回 true, 否则返回false。
+
+        // let pattern = /abc/;
+        // pattern.test("abcdef"); // 返回 true
+
+        
+        // 6. exec() - 执行正则表达式匹配。返回匹配结果的数组, 或者null。
+
+        // let pattern = /abc/;
+        // let result = pattern.exec("abcdef");
+        // console.log(result); // ["abc", index: 0, input: "abcdef", ...]
+
+
+
+
+
+        
+        // 2. match() - 找到一个或多个正则表达式的匹配。
+
+        // let str = "123abc456abc789";
+        // let pattern = /abc/g;
+        // str.match(pattern); // 返回 ["abc", "abc"]
+
+
+
+
+        // 3. search() - 搜索出正则表达式的第一个匹配。如果找到匹配则返回匹配的第一个字符的索引, 否则返回 - 1。
+
+        // let str = "123abc456abc789";
+        // let pattern = /abc/;
+        // str.search(pattern); // 返回 3
+
+
+
+
+        // 4. replace() - 替换匹配正则表达式的文本。
+
+        // let str = "123abc456abc789";
+        // let newStr = str.replace(/abc/g, "ABC");
+        // console.log(newStr); // "123ABC456ABC789"
+
+
+
+
+        // 5. split() - 根据正则表达式分割字符串。
+
+        // let str = "hello,world!"
+        // let arr = str.split(/,/);
+        // console.log(arr); // ["hello", "world!"]
+
+
+
+
+
+
+
+
+        //练习
+        var reg = /abc/
+
+        mytext.onblur = function () {
+            console.log(mytext.value)
+            console.log(reg.test(mytext.value))
+            console.log(mytext.value.match(reg))
+        }
+
+
+        // var reg2=/\d{3}/
+        // console.log(reg2.exec("aa123a"))//捕获出匹配的内容
+
+        var datestr = "time is from 2022-01-21 12:20:10 to 2029-11-01 12:11:18"
+
+        //匹配出日期
+        // var reg3=/\d{4}-\d{1,2}-\d{1,2}/
+        // console.log(reg3.exec(datestr))//捕获出匹配的内容
+        // var newDate=reg3.exec(datestr)[0]//2022-01-21
+        // console.log(newDate.split("-").join("/"))//转成2022/01/21
+
+        // 行为的标志 g（全局匹配) i(忽略大小写)
+        var reg3 = /\d{4}-\d{1,2}-\d{1,2}/g
+        var newDateStr1 = reg3.exec(datestr)
+        var newDateStr2 = reg3.exec(datestr)
+        console.log(newDateStr1)//第一次捕获出匹配的内容
+        console.log(newDateStr2)//第二次捕获出匹配的内容
+        var newDate = newDateStr1[0]//2022-01-21
+        console.log(newDate.split("-").join("/"))//转成2022/01/21
+
+        var newDate2 = newDateStr2[0]//2022-01-21
+        console.log(newDate2.split("-").join("/"))//转成2022/01/21
+
+
+        var myreg=/[a-z]/i  //i 忽略大小写
+        console.log(myreg.test("AA"))
+        console.log(myreg.exec("AA"))
+    </script>
+</body>
+
+</html>

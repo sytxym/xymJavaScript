@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>111
+            <button>del</button>
+        </li>
+        <li>222
+            <button>del</button>
+        </li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <script>
+        //on 用法
+        // $("ul").on("click",function(){
+        //     console.log("ul click")
+        // })
+        // $("ul li").on("click",function(){
+        //     console.log("li click")
+        // })
+
+        //on  事件委托
+        // $("ul").on("click","button" ,function () {//只有点击button的时触发这个函数
+        //     // console.log("ul click")
+        //     console.log(this.parentNode.remove())
+        // })
+
+        //on 传参数（必须对象）
+        // $("ul").on("click",{name:"xym"} ,function (e) {//只有点击button的时触发这个函数
+        //     console.log(e)
+        // })
+
+        //on 事件委托+参数（随意）
+        //   $("ul").on("click","button",{name:"xym"} ,function (e) {//只有点击button的时触发这个函数
+        //     console.log(e)
+        // })
+
+
+        //one 一次性事件  on 每次点击都触发 
+        // $("ul").one("click", "button", function () {//只有点击button的时触发这个函数
+        //     console.log("ul click")
+        // })
+
+        //常用的方法函数 click mouseover() ,mouseout(),blur(),change(),input()...
+        // $("ul li").click("xym",function(e){//xym传参数，e接收参数
+        //     console.log("click",e.data)
+        // }).mouseover(function(){//支持链式调用
+        //     console.log("mouseover")
+        // })
+
+        //off()解绑所有事件   off("click")解绑click事件 off("click",函数名) 要解绑onclick的指定函数
+        // $("ul li").off("click")
+
+        function A(){
+            console.log("a")
+        }
+        function B(){
+            console.log("b")
+        }
+
+        $("ul li").on("click",A).on("click",B)
+
+        $("ul li").off("click",A)
+
+
+
+    </script>
+</body>
+
+</html>

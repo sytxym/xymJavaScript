@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+
+
+    <script>
+        // fetch可以取代XMLHttpRequest，并不是取代ajax，ajax是交互技术
+
+
+        myget.onclick = function () {
+            // var xhr = new XMLHttpRequest()
+            // xhr.open("GET", "http://localhost:3000/user")
+            // xhr.onload = function () {
+            //     if (xhr.status === 200) {
+            //         console.log(JSON.parse(xhr.responseText))
+            //     }
+            // }
+            // xhr.send()
+
+            //简洁写法版本
+            // fetch("http://localhost:3000/user")
+            // .then(res=>res.json())
+            // .then(res=>{
+            //     console.log(res)
+            // })
+
+            //错误处理版本
+            fetch("http://localhost:3000/user")
+                .then(res => {
+                    //可以在这里处理错误
+                    console.log(res)
+                    if (res.ok) {
+                        return res.json()
+                    } else {
+                        //错误处理
+                        return Promise.reject({
+                            status: res.status,
+                            statusText: res.statusText
+                        })
+                    }
+                })
+                .then(res => {
+                    console.log(res)
+                }).catch(err => {
+                    console.log("err", err)
+                })
+
+
+
+        }
+
+
+        mypost.onclick = function () {
+
+            //ajax XMLHttpRequest
+            // var xhr = new XMLHttpRequest()
+            // xhr.open("POST", "http://localhost:3000/user")
+            // xhr.onload = function () {
+            //     if (/^2\d{2}$/.test(xhr.status)) {
+            //         console.log(JSON.parse(xhr.responseText))
+            //     }
+            // }
+
+            // //post方式提交 信息内容
+            // //表单方式：name="xym"&age=100  json方式：{"name"："dada"}
+
+            // //form
+            // // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+            // // xhr.send(`username=woaini&password=789`)
+
+            // //json
+            // xhr.setRequestHeader("Content-Type", "application/json")
+            // xhr.send(JSON.stringify({
+            //     username: "pp",
+            //     password: "9099"
+            // }))
+
+
+
+            //fetch form
+            // fetch("http://localhost:3000/user",
+            //     {
+            //         method: "POST",
+            //         headers: {
+            //             "content-type": "application/x-www-form-urlencoded"
+            //         },
+            //         body: "username=woaini&password=789"
+
+            //     })
+            //     .then(res => res.json())
+            //     .then(res => {
+            //         console.log(res)
+            //     })
+
+            //fetch json
+            fetch("http://localhost:3000/user",
+                {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: "woaixiehui",
+                        password: "999"
+                    })
+
+                })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res)
+                })
+        }
+
+
+
+        myput.onclick = function () {
+
+            // var xhr = new XMLHttpRequest()
+            // xhr.open("PUT", "http://localhost:3000/user/1") //id=1的user对象 put操作
+            // xhr.onload = function () {
+            //     if (/^2\d{2}$/.test(xhr.status)) {
+            //         console.log(JSON.parse(xhr.responseText))
+            //     }
+            // }
+
+            // xhr.setRequestHeader("Content-Type", "application/json")
+            // xhr.send(JSON.stringify({
+            //     username: "aiwoma",
+            //     password: "666"
+            // }))
+
+            fetch("http://localhost:3000/user/4",
+                {
+                    method: "PUT",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: "WOMENZAIYIQI",
+                    })
+
+                })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res)
+                })
+        }
+
+
+        mypatch.onclick = function () {
+
+            // var xhr = new XMLHttpRequest()
+            // xhr.open("PATCH", "http://localhost:3000/user/2") //id=1的user对象 put操作
+            // xhr.onload = function () {
+            //     if (/^2\d{2}$/.test(xhr.status)) {
+            //         console.log(JSON.parse(xhr.responseText))
+            //     }
+            // }
+
+            // xhr.setRequestHeader("Content-Type", "application/json")
+            // xhr.send(JSON.stringify({
+            //     username: "xiaotingying",
+            // }))
+
+            fetch("http://localhost:3000/user/4",
+                {
+                    method: "PATCH",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: "WOMENZAIYIQI",
+                    })
+
+                })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res)
+                })
+        }
+
+        mydelete.onclick = function () {
+
+            // var xhr = new XMLHttpRequest()
+            // xhr.open("DELETE", "http://localhost:3000/user/1") //id=1的user对象 put操作
+            // xhr.onload = function () {
+            //     if (/^2\d{2}$/.test(xhr.status)) {
+            //         console.log(JSON.parse(xhr.responseText))
+            //     }
+            // }
+            // xhr.send()
+
+            fetch("http://localhost:3000/user/3",
+                {
+                    method: "DELETE"
+                })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res)
+                })
+        }
+
+
+    </script>
+</body>
+
+</html>

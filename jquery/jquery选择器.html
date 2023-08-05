@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+    <style>
+        .active {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="list">
+        <li>111</li>
+        <li>222</li>
+        <li class="active">333</li>
+        <li class="a">444</li>
+        <li class="end">555</li>
+        <li  class="a">666</li>
+        <li>777
+            <ul>
+                <li>7-111</li>
+                <li>7-222</li>
+                <li>7-333</li>
+            </ul>
+
+        </li>
+    </ul>
+
+    <div id="box"></div>
+    <script>
+
+        //1.基本选择器
+        //2. 特殊选择器
+        //3. 筛选方法
+
+        //1.基本选择器 都是一些css里的
+        // console.log($("ul li"))//返回伪数组
+
+        // console.log($("#box")[0])//单个也是数组
+
+        // console.log($("ul li:last-child")[0])
+
+        //2.jquery特殊选择器
+        // console.log($("ul li:first")[0])//第一个
+        // console.log($("ul li:last")[0])//最后一个
+        // var index=2
+        // console.log($(`ul li:eq(${index})`))//第几个
+        // console.log($("ul li:odd"))//偶数
+        // console.log($("ul li:even"))//奇数
+
+        // 3. 二次筛选方法
+        // console.log($("ul li").first())
+        // console.log($("ul li").eq(3))
+
+        // console.log($("ul li").first().next())//链式
+        // console.log($("ul li.active").next())//active的下一个
+        // console.log($("ul li.active").nextAll())//active的下面的所有节点
+        // console.log($("ul li.active").nextAll(".a"))//active的下面所有class等于a的节点
+        // console.log($("ul li.active").nextUntil(".end"))//往下找,直到clas=end停止查找节点
+
+        // console.log($("ul li.active").prev())//active的上一个
+        // console.log($("ul li.active").prevAll())//active的上面所有
+        // console.log($("ul li.active").prevAll(".a"))//active的上面所有class等于a的节点
+        // console.log($("ul li.active").prevUntil(".end"))//往上找，直到clas=end停止查找节点
+
+        // console.log($("ul li.active").parent())
+        // console.log($("ul li.active").parents())//所有的祖先，父亲、爷爷、祖爷
+        // console.log($("ul li.active").siblings())//除了我自己，所有的兄弟
+        // console.log($("ul").children())//所有的孩子
+        // console.log($("ul.list").children())//跟上面一样，也是所有的孩子
+        // console.log($("ul").find("li"))//所有ul的下面的li都查找
+        // console.log($("ul li.active").index())//获取索引
+
+  
+    </script>
+</body>
+
+</html>

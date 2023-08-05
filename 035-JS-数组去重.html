@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 2, 3, 4, 3, 5, 6, 2, 1]
+
+
+        //方法一：indexOf
+        // function removeDuplicates(arr) {
+        //     var result = [];
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (result.indexOf(arr[i]) === -1) {
+        //             result.push(arr[i]);
+        //         }
+        //     }
+        //     return result;
+        // }
+        // console.log(arr1,removeDuplicates(arr1))
+
+
+       // 方法二：Object 键值对:
+        function removeDuplicates(arr) {
+            let obj = {};
+            let result = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (!obj[arr[i]]) {
+                    obj[arr[i]] = true;
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+        // console.log(arr1,removeDuplicates(arr1))
+
+        //方法三 new Set
+        function removeDuplicates(arr){
+            var set=new Set(arr)//set去重
+            var arr2=Array.from(set)//set转换成数组
+            console.log(arr2)
+        }
+
+        removeDuplicates(arr1)
+
+    </script>
+
+
+</body>
+
+</html>

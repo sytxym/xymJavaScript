@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    /*     选择排序(Selection Sort)的工作原理:
+
+        1. 在未排序序列中找到最小(大)元素, 存放到排序序列的起始位置
+        2. 再从剩余未排序元素中继续寻找最小(大)元素, 然后放到已排序序列的末尾。
+        3. 重复第二步, 直到所有元素均排序完毕。
+
+        JavaScript 实现: */
+
+        function selectionSort(arr) {
+            const n = arr.length;
+
+            for (let i = 0; i < n - 1; i++) {
+                // 记录最小索引
+                let min = i;
+                for (let j = i + 1; j < n; j++) {
+                    if (arr[j] < arr[min]) {
+                        min = j;
+                    }
+                }
+                // 交换
+                if (i !== min) {
+                    let temp = arr[i];
+                    arr[i] = arr[min];
+                    arr[min] = temp;
+                }
+            }
+
+            return arr;
+        }
+
+        selectionSort([5, 3, 6, 2, 10]);
+        // [2, 3, 5, 6, 10]
+    </script>
+</body>
+
+</html>

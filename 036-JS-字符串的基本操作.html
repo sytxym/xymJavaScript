@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //创建字符串
+        var str = "hello"
+        console.log(str)
+        var str1 = new String("hello")
+        console.log(str1)
+
+        //length 长度
+        str.length
+
+        //索引
+        console.log(str1[2])
+
+        //统计每个字符出现的个数
+        function countChars(str) {
+            var result = {};
+
+            for (var char of str) {
+
+                result[char] = result[char] ? result[char] + 1 : 1;
+                console.log(result[char], char)
+            }
+
+            return result;
+        }
+
+        countChars("hello");
+        // { h: 1, e: 1, l: 2, o: 1 }
+
+/* 这里是 JavaScript 字符串常用方法的简单总结:
+
+        1. length - 返回字符串的长度
+
+        2. indexOf() - 返回某个指定的字符串值第一次出现的位置
+
+        3. lastIndexOf() - 返回某个指定的字符串值最后一次出现的位置
+
+        4. slice() - 提取字符串的一部分, 并返回一个新字符串
+
+        5. substring() - 与 slice() 类似, 但不能接受负数作为参数
+
+        6. substr() - 提取字符串的一部分, 并返回一个新字符串
+
+        7. replace() - 替换字符串中的指定值
+
+        8. toLowerCase() - 将字符串转换为小写
+
+        9. toUpperCase() - 将字符串转换为大写
+
+        10. trim() - 移除字符串两端的空格
+
+        11. split() - 把字符串分割为字符串数组
+
+        12. concat() - 连接两个或多个字符串, 返回连接后的字符串
+
+        13. charAt() - 返回指定索引的字符
+
+        14. charCodeAt() - 返回指定索引字符的 Unicode 编码
+
+        15. fromCharCode() - 根据 Unicode 编码返回相应的字符
+
+        16. includes() - 判断字符串是否包含指定的子字符串
+
+        17. startsWith() - 判断字符串是否以指定的子字符串开始
+
+        18. endsWith() - 判断字符串是否以指定的子字符串结束
+
+         */
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES5中实现面向对象继承主要有以下几种方式:
+
+        // 1. 原型链继承: 将子类型的原型设置为父类型的实例。
+
+        //语法
+        // function Parent() { }
+        // function Child() { }
+        // Child.prototype = new Parent();
+
+        //用法
+        // function Parent() {
+        // }
+
+        // Parent.prototype.say=function(){
+        //     console.log("hello")
+        // }
+
+        // function Child() {
+        // }
+
+        // Child.prototype = new Parent();
+
+        // var obj = new Child()
+        // obj.say()
+
+
+        // 2. 借用构造函数: 在子类型构造函数中调用父类型构造函数。
+
+        //语法
+        // function Parent() { }
+        // function Child() {
+        // Parent.call(this); 
+        // }
+
+
+        //用法
+        // function Parent(name, age) {
+        //     this.name = name
+        //     this.age = age
+        // }
+        // function Child(name, age, grade) {
+        //     Parent.call(this, name, age)
+        //     this.grade = grade
+        // }
+
+        // var obj = new Child("XYM", 19, 100)
+        // console.log(obj)
+
+
+        // 3. 组合继承: （推荐方式） 结合了原型链和借用构造函数的技术, 是ES5中最常用的继承模式。
+
+        //语法
+        // function Parent() { }
+        // function Child() {
+        //     Parent.call(this);
+        // }
+        // Child.prototype = new Parent();
+
+        //用法
+        function Parent(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        Parent.prototype.say = function () {
+            console.log(this.name, "hello")
+        }
+
+        function Child(name, age, grade) {
+            Parent.call(this, name, age)
+            this.grade = grade
+        }
+
+        //将子类型的原型设置为父类型的实例。
+        Child.prototype = new Parent();
+
+        //子类自己也可以新增拓展方法print
+        Child.prototype.print=function(){
+            console.log(this.name,this.grade)
+        }
+
+        //增强原来的方法
+
+        // 1.
+        // Child.prototype.say2=function(){
+        //     this.say()
+        //     console.log(this.name,"您好啊")
+        // }
+
+        // 2.
+       Child.prototype.say=function(){
+            Parent.prototype.say.call(this)
+            console.log(this.name,"您好啊")
+        }
+        
+        var obj = new Child("XYM", 19, 100)
+        console.log(obj)
+        obj.say()
+        obj.print()
+        // obj.say2()
+
+        // 4. 原型式继承: 通过已有的对象创建新对象。
+        // function object(o) {
+        //     function F() { }
+        //     F.prototype = o;
+        //     return new F();
+        // }
+
+
+        // 5. 类式继承: ES6引入了类, 提供了更接近传统面向对象语言的继承方式。
+
+        // 总的来说, ES5中通过原型链和构造函数模拟实现了继承。组合继承是最常用的方式, 融合了原型链和构造函数的优点。
+
+    </script>
+</body>
+
+</html>

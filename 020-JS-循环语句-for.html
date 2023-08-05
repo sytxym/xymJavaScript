@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // for (let i = 0; i < 5; i++) {
+        //     console.log(i);
+        // }
+        // 上面的for循环会打印0到4。
+
+        // 0
+        // 1
+        // 2 
+        // 3
+        // 4
+
+
+
+        // 你也可以在for循环中使用continue和break语句:
+        // continue会终止当前迭代, 并继续下一个。
+        // break会终止整个循环。
+        // for (let i = 0; i < 10; i++) {
+        //     if (i === 5) {
+        //         continue;
+        //     }
+        //     console.log(i);
+        //     if (i === 7) {
+        //         break;
+        //     }
+        // }
+
+        // 0  
+        // 1
+        // 2
+        // 3
+        // 4
+        // 6
+        // 8
+
+
+        //for 累加到100
+        let sum = 0;
+        for (let i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+
+        //求出1000-2000闰年
+        // for (let year = 1000; year<=2000; year++) {
+        //     if(year%400===0||(year % 4=== 0 && year % 100 != 0)){
+        //         document.write(year+"   ")
+        //     }
+        // }
+
+        // 求出1000-2000闰年 步长4的写法
+        var count=0
+        for (let year = 1000; year<=2000; year+=4) {
+            if(year%400===0|| year % 100 != 0){
+                document.write(year+" ")
+
+                count++
+                if(count%6==0){//每6个输出一个换行，为了好看
+                    document.write("<br>")
+                }
+            }
+
+          
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

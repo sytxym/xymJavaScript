@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es6 - ``  反引号
+        //支持换行
+        var myhtml=`<li>111111</li>
+        <li>2222222</li>
+        <li>3333333</li>`
+        document.write(myhtml)
+
+        //支持拼接属性或者表达式
+        var myname="xym"
+        var str=`my name is ${myname} ${10>20?'aaa':'bbbb'}`
+        document.write(str)
+
+
+        var arr12=[1,2,3,4,5]
+        var arr12T=arr12.map(function(item){
+            return `<li>${item}</li>`
+        })
+        console.log(arr12T)
+        document.write(arr12T.join(""))
+    </script>
+</body>
+</html>

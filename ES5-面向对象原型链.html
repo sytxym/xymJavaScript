@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+
+    <div class="box2">
+        <h1></h1>
+        <ul></ul>
+    </div>
+
+    <script>
+
+        var jsonProvince={
+            title:"省份",
+            list:["湖南省","河南省","广东省","云南省"]
+        }
+
+        var jsonCity={
+            title:"城市",
+            list:["长沙","上海","重庆","成都","北京","昆明","广州","深圳","杭州"]
+        }
+
+        function CreateList(boxSelect,data){
+            this.ele=document.querySelector(boxSelect)
+            this.title=data.title
+            this.list=data.list
+            // this.render=function(){  //这样写的缺陷：每次创建一个对象，这个方法也会创建一次内存，100个对象就会创建100次内存，逻辑一样多次创建造成资源浪费
+            //     //渲染页面
+            //     var h1=this.ele.querySelector("h1")
+            //     var ul=this.ele.querySelector("ul")
+
+            //     // console.log(h1)
+            //     // console.log(ul)
+
+            //     h1.innerHTML=this.title
+            //     ul.innerHTML=this.list.map(item=>{
+            //         return `<li>${item}</li>`
+            //     }).join("")
+            // }
+        }
+
+        //原型方案的优势：共享一个内存
+        CreateList.prototype.render=function(){  //这样写
+                //渲染页面
+                var h1=this.ele.querySelector("h1")
+                var ul=this.ele.querySelector("ul")
+
+                // console.log(h1)
+                // console.log(ul)
+
+                h1.innerHTML=this.title
+                ul.innerHTML=this.list.map(item=>{
+                    return `<li>${item}</li>`
+                }).join("")
+            }
+
+        var obj1=new CreateList(".box1",jsonProvince)
+        var obj2=new CreateList(".box2",jsonCity)
+        // console.log(obj1,obj2)
+        console.log(obj1.__proto__)
+
+        obj1.render()
+        obj2.render()
+
+        //对象.__proto__ ====构造函数.prototype 调用render（）它会去找到prototype上的render
+
+
+        // toString() 原型链 obj1没有toString，再去查找new Object().toString()
+        console.log(obj1.toString())
+
+    </script>
+</body>
+</html>

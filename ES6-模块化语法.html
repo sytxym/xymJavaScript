@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="js/c.js" type="module"></script>
+
+    <script type="module">
+        //webpack 打包成es5的代码，兼容低版本浏览器
+
+        /* 
+        模块化
+        解决以下这些问题
+        1.私密不露
+        2.重名不怕
+        3.依赖不乱
+        */
+
+        import {A1,A2,A_YILAI,test as A1_TEST} from '/js/a.js'  //as别名，解决函数重名问题
+        import {B1,B2,B_YILAI,test as B1_TEST} from '/js/b.js'  //as别名，解决函数重名问题
+        import Cdd from '/js/c.js' //导入一个函数可以这样写 导入函数名可以自定义
+
+        A1()
+        A2()
+        A1_TEST()
+
+        B1()
+        B2()
+        B1_TEST()
+        // my_common()//my_common在a.js没有导出，这样调用不到隐私函数了
+
+        Cdd()
+        
+
+    </script>
+</body>
+</html>

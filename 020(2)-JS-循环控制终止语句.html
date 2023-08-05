@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 你也可以在for循环中使用continue和break语句:
+        // continue会终止当前迭代, 并继续下一个。
+        // break会终止整个循环。
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                continue;
+            }
+            console.log(i);
+            if (i === 7) {
+                break;
+            }
+        }
+
+        // 输出结果
+        // 0  
+        // 1
+        // 2
+        // 3
+        // 4
+        // 6
+        // 8
+    </script>
+</body>
+</html>

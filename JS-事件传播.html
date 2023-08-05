@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outer {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            overflow: hidden;
+        }
+
+        #center {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            margin: 20px;
+        }
+
+        #inner {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="center">
+
+            <div id="inner">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        /* 
+        机制:标准的dom事件流三个阶段
+        
+        捕获：window->document->body->outer
+        目标：inner
+        冒泡：outer->body->document->window 
+
+        默认情况 dom0点击事件只在冒泡阶段触发
+
+        按照dom2事件绑定，并进行配置，才能看到捕获的回调函数被处罚
+       */
+
+
+
+        //默认情况：只在冒泡阶段触发，事件流会由内往外传递
+        // inner.onclick = function () {
+        //     console.log("inner")
+        // }
+
+        // center.onclick = function () {
+        //     console.log("center")
+        // }
+
+        // outer.onclick = function () {
+        //     console.log("outer")
+        // }
+
+        // document.body.onclick = function () {//body
+        //     console.log("body")
+        // }
+
+        // document.documentElement.onclick = function () {//html
+        //     console.log("documentElement")
+        // }
+
+        // document.onclick = function () {//整个文档
+        //     console.log("document")
+        // }
+
+        // window.onclick = function () {//整个窗口
+        //     console.log("window")
+        // }
+
+
+
+        
+
+        // 冒泡阶段        
+        inner.addEventListener("click", function () {
+            console.log("inner")
+        })
+        center.addEventListener("click", function () {
+            console.log("center")
+        })
+        outer.addEventListener("click", function () {
+            console.log("outer")
+        })
+        document.body.addEventListener("click", function () {
+            console.log("body")
+        })
+        document.documentElement.addEventListener("click", function () {
+            console.log("documentElement")
+        })
+        document.addEventListener("click", function () {
+            console.log("document")
+        })
+
+        window.addEventListener("click", function () {
+            console.log("window")
+        })
+
+
+        // 捕获阶段
+        inner.addEventListener("click", function () {
+            console.log("inner-捕获")
+        }, true)
+        center.addEventListener("click", function () {
+            console.log("center-捕获")
+        }, true)
+        outer.addEventListener("click", function () {
+            console.log("outer-捕获")
+        }, true)
+        document.body.addEventListener("click", function () {
+            console.log("body-捕获")
+        }, true)
+        document.documentElement.addEventListener("click", function () {
+            console.log("documentElement-捕获")
+        }, true)
+        document.addEventListener("click", function () {
+            console.log("document-捕获")
+        }, true)
+
+        window.addEventListener("click", function () {
+            console.log("window-捕获")
+        }, true)
+
+    </script>
+
+</body>
+
+</html>

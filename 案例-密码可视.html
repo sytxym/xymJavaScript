@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="password">
+    <button id="eyebtn">眼睛</button>
+    <script>
+        var pInput=document.getElementById("password")
+        var btn=document.getElementById("eyebtn")
+        btn.onclick=function(){
+            if(pInput.type==="password"){
+                pInput.type="text"
+            }else{
+                pInput.type="password"
+            }
+            
+        }
+    </script>
+</body>
+</html>

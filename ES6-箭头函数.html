@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function ready() {
+
+            //普通函数
+            let test1 = function () {
+                console.log("11111")
+            }
+
+            //es6 箭头函数
+            let test2 = () => {
+                console.log("22222")
+            }
+
+            test1()
+            test2()
+
+            /* 
+            1. 只有一个参数（）可以省略
+            2. 只有一句代码时，{}可以省略 return也省略
+            3.没有arguments
+            4.箭头函数没有this
+              箭头函数this是父级作用域的
+            */
+
+            // 只有一个参数（）可以省略
+            var test3 = a => {
+                console.log("哈哈哈")
+            }
+            test3()
+
+            // 只有一句代码时，{}可以省略
+            var test4 = a => console.log("啦啦啦")
+            test4()
+
+
+            // var list=["aaa","bbb","cccc"]
+            // var newList=list.map(function(item){
+            //     return `<li>${item}<li>`
+            // })
+
+
+            // let newList=list.map(item=>`<li>${item}<li>`)
+            // console.log(newList.join(""))
+
+
+            // var test4 = ()=>({
+            //     name:"xym"
+            // })
+            // console.log(test4())
+
+            //arguments可以在没有形参的时候，获取参数
+            // var test6=function(){
+            //     console.log(arguments[0],arguments[1],arguments[2])
+            // }
+
+            // test6(1,2,3)
+
+
+            //缺陷：箭头函数没有arguments
+            // var test6 = () => {
+            //     console.log(arguments[0], arguments[1], arguments[2])
+            // }
+            // test6(1, 2, 3)
+
+
+            //箭头函数this是父级作用域的
+            // const mytext = document.getElementById("mytext")
+            // console.log(mytext)
+            // mytext.oninput=function(){
+            //     setTimeout(() => {
+            //         console.log(this.value)
+            //     }, 1000);
+            // }
+
+
+            console.log(temp())
+            console.log(temp(10, 20))
+
+        }
+
+        //函数默认值
+        // function temp(a = 1, b = 2) {
+        //     return a + b
+        // }
+
+        var temp=(a=1,b=2)=>{
+            return a+b
+        }
+
+
+
+    </script>
+</head>
+
+<body onload="ready()">
+    <input type="text" name="" id="mytext">
+</body>
+
+</html>

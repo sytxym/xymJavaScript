@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 1. toString() - 将数字转换为字符串
+
+
+        // 2. toFixed() - 保留指定的小数位
+
+
+
+        // 3. toExponential() - 使用指数记法返回字符串
+
+
+        // 4. toPrecision() - 返回指定精度的字符串
+
+
+        // 5. valueOf() - 返回 Number 对象的原始值
+
+
+        // 6. parseInt() - 解析一个字符串并返回整数
+
+        // 7. parseFloat() - 解析一个字符串并返回浮点数
+
+        // 8. isNaN() - 判断值是否为非数字值
+
+        // 9. isFinite() - 判断值是否为有限的数字
+
+        // 10. Math 对象的方法 - 包括 max(), min(), abs() 等
+
+
+        //toFixed
+        var price = 123.44424
+        console.log(price.toFixed(2))//toFixed返回的字符串
+
+        //Math random 返回0-1的随机数
+        var random = Math.random()
+        console.log(random)
+
+        //返回指定范围的随机整数
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        getRandomInt(5, 10); // 8 (5 - 10 之间的随机整数)
+
+        //round 四舍五入取整
+        console.log(Math.round(4.5699))
+
+
+        //ceil 向上  floor向下
+        console.log(Math.floor(4.96))
+
+        //abs 绝对值
+        console.log(Math.abs(-10.2))
+
+        //sqrt 平方根
+        console.log(Math.sqrt(25))
+
+        //pow(底数，指数) 幂方
+        console.log(Math.pow(3,3))
+
+        //max(多个参数) min 求最大最小
+        console.log(Math.max(10,20,30,59,99,11))
+
+        //PI
+        console.log(Math.PI)
+
+    </script>
+</body>
+
+</html>

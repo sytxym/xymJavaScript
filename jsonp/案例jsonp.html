@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mysearch">
+    <ul id="list">
+
+    </ul>
+    <script>
+    //    https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=36551,38643,38831,39027,39024,38943,38958,38954,38983,39038,38804,38988,39084,38636,26350,39041,39095,39100&wd=a&his=%5B%7B%22time%22%3A1689484293%2C%22kw%22%3A%22js%20%E6%95%B0%E7%BB%84%E7%A7%BB%E9%99%A4%22%2C%22fq%22%3A10%7D%2C%7B%22time%22%3A1689484301%2C%22kw%22%3A%22%E6%89%8B%E6%9C%BA%E5%9B%BE%E7%89%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689484315%2C%22kw%22%3A%22%E6%89%8B%E6%9C%BA%E8%AE%BE%E5%A4%87%E5%9B%BE%E7%89%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689484341%2C%22kw%22%3A%22%E5%B0%8F%E7%B1%B3%E6%89%8B%E6%9C%BA%E5%9B%BE%E7%89%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689504656%2C%22kw%22%3A%22json-server%20public%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689504943%2C%22kw%22%3A%22json-server%20%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689506035%2C%22kw%22%3A%22vscode%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%9B%BE%E6%A0%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689506286%2C%22kw%22%3A%22vscode%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%9B%BE%E6%A0%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689506813%2C%22kw%22%3A%22vscode%20%E6%96%87%E4%BB%B6%E5%9B%BE%E6%A0%87%E4%B8%BB%E9%A2%98%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689561761%2C%22kw%22%3A%22%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%22%2C%22fq%22%3A2%7D%5D&req=2&csor=1&cb=xym&_=1689565784413 
+    
+    mysearch.oninput=function(evt){
+        console.log(evt.target.value)
+
+        if(!evt.target.value){
+            list.innerHTML=""
+            return
+        }
+
+        var oscript=document.createElement("script")
+        oscript.src=`https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=36551,38643,38831,39027,39024,38943,38958,38954,38983,39038,38804,38988,39084,38636,26350,39041,39095,39100&wd=${evt.target.value}&his=%5B%7B%22time%22%3A1689484293%2C%22kw%22%3A%22js%20%E6%95%B0%E7%BB%84%E7%A7%BB%E9%99%A4%22%2C%22fq%22%3A10%7D%2C%7B%22time%22%3A1689484301%2C%22kw%22%3A%22%E6%89%8B%E6%9C%BA%E5%9B%BE%E7%89%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689484315%2C%22kw%22%3A%22%E6%89%8B%E6%9C%BA%E8%AE%BE%E5%A4%87%E5%9B%BE%E7%89%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689484341%2C%22kw%22%3A%22%E5%B0%8F%E7%B1%B3%E6%89%8B%E6%9C%BA%E5%9B%BE%E7%89%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689504656%2C%22kw%22%3A%22json-server%20public%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689504943%2C%22kw%22%3A%22json-server%20%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689506035%2C%22kw%22%3A%22vscode%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%9B%BE%E6%A0%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689506286%2C%22kw%22%3A%22vscode%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%9B%BE%E6%A0%87%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689506813%2C%22kw%22%3A%22vscode%20%E6%96%87%E4%BB%B6%E5%9B%BE%E6%A0%87%E4%B8%BB%E9%A2%98%22%2C%22fq%22%3A2%7D%2C%7B%22time%22%3A1689561761%2C%22kw%22%3A%22%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%22%2C%22fq%22%3A2%7D%5D&req=2&csor=1&cb=xym&_=1689565784413`
+        document.body.appendChild(oscript)
+
+        oscript.onload=function(){
+            oscript.remove()
+        }
+        
+    }
+
+    function xym(obj){
+        console.log(obj)
+        list.innerHTML=obj.g.map(item=>
+        `<li>${item.q}</li>`
+        ).join("")
+    }
+        
+    </script>
+</body>
+</html>

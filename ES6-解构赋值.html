@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //快速从对象和数组中获取里面的成员
+        var arr = ["xiaoming", "xiaohong", "xiaowang"]
+        // console.log(arr[0])
+
+        //数组解构赋值
+        let [x, y, z] = arr
+        console.log(x, y, z)
+
+        //运用于 交换
+        var a = 10
+        var b = 20
+        var [b, a] = [a, b]
+        console.log(a, b)
+
+        //多维数组怎么拿到5
+        var arr2 = [1, 2, [3, 4, [5]]]
+        console.log(arr2[2][2][0])//普通获取
+        var [q, w, [e, r, [c]]] = arr2//解构获取
+        console.log(c)
+
+        //对象解构很方便
+        var obj = {
+            name: "xym",
+            age: 100,
+            location: "dalian"
+        }
+        document.write(obj.name)
+        let { name, age, location:mylocotion} = obj
+        document.write(name,age,mylocotion)
+
+    </script>
+</body>
+
+</html>

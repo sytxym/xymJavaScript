@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <script>
+
+
+            // .offset() - 获取第一个元素相对于文档的当前位置。
+
+            // var offset = $("#someElement").offset();
+            // console.log(offset.top);  // Distance from top of page
+            // console.log(offset.left); // Distance from left of page
+
+            // .position() - 获取第一个元素相对于其偏移父元素的当前坐标。
+            // var position = $("#someElement").position();
+            // console.log(position.top);  
+            // console.log(position.left);
+
+            // scrollTop() - 获取垂直滚动条位置
+            // var scrollTop = $(window).scrollTop();
+
+            // .scrollLeft() - 获取水平滚动条位置。
+            // var scrollLeft = $(window).scrollLeft();
+
+            // .offset() 和.position() 返回具有.top 和.left 属性的对象文字，分别表示距文档或偏移父级顶部和左侧的偏移 / 位置。
+            //         您还可以设置元素的偏移 / 位置：
+
+            $("#someElement").offset({
+                top: 100,
+                left: 100
+            });
+
+            $("#someElement").position({
+                top: 100,
+                left: 100
+            });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+//循环5个
+// @for $item from 1 to 6{
+//     li:nth-child(#{$item}){
+//         position: absolute;
+//         left: ($item - 1)*100px;
+//         top: ($item - 1)*100px;
+//     }
+// }
+
+// @for $item from 1 through 6{
+//     li:nth-child(#{$item}){
+//         position: absolute;
+//         left: ($item - 1)*100px;
+//         top: ($item - 1)*100px;
+//     }
+// }
+
+$colors:red,green,yellow;
+@each $item in $colors{
+    //取下标
+    $index: index($colors,$item);
+    li:nth-child(#{$index}){
+        background: $item;
+    }
+}
+

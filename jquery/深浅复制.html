@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 以下是在JavaScript中实现深浅复制的代码示例：
+        // 浅复制的实现：
+        // 1. 使用赋值操作符（=）进行浅复制：
+        // let originalObj = { name: 'John', age: 30 };
+        // let shallowCopyObj = originalObj;
+
+        // 2. 使用扩展运算符（...）进行浅复制：
+        // let originalObj = { name: 'John', age: 30 };
+        // let shallowCopyObj = { ...originalObj };
+
+        // 深复制的实现：
+        // 1. 使用JSON.parse(JSON.stringify(obj))进行深复制：
+        // let originalObj = { name: 'John', age: 30 };
+        // let deepCopyObj = JSON.parse(JSON.stringify(originalObj));
+
+        // 2. 使用递归函数结合Object.assign()进行深复制：
+        // function deepCopy(obj) {
+        //     let copy = Array.isArray(obj) ? [] : {};
+        //     for (let key in obj) {
+        //         if (typeof obj[key] === 'object' && obj[key] !== null) {
+        //             copy[key] = deepCopy(obj[key]);
+        //         } else {
+        //             copy[key] = obj[key];
+        //         }
+        //     }
+        //     return Object.assign(copy);
+        // }
+
+        // let originalObj = { name: 'John', age: 30 };
+        // let deepCopyObj = deepCopy(originalObj);
+
+        // 3. 使用第三方库如Lodash的_.cloneDeep()方法进行深复制：
+        // const _ = require('lodash');
+        // let originalObj = { name: 'John', age: 30 };
+        // let deepCopyObj = _.cloneDeep(originalObj);
+
+        // 这些代码示例可以根据你的具体需求进行调整和使用。记住，在进行深复制时，需要注意处理循环引用的情况，以避免无限递归。
+
+    </script>
+</body>
+
+</html>

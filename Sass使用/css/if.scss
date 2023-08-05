@@ -1,0 +1,12 @@
+$widith:200px;
+$isCheck:false;
+
+div{
+    width: $widith/3;
+    height: 100px;
+    @if($isCheck==true){
+        background: red;
+    }@else{
+        background: green;
+    }
+}

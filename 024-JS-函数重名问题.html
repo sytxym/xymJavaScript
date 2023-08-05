@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var name = "xty"
+        var name = "xym"
+        console.log(name)//打印后来的变量值
+
+        // test()//方法重名，也用后面的
+
+        // function test(){
+        //     console.log("test")
+        // }
+
+        // function test(){
+        //     console.log("test2")
+        // }
+
+
+
+        // var age=100
+        // function age(){
+        //     console.log("age is 100")
+        // }
+
+        // console.log(age)//会打印100 变量会覆盖函数
+
+
+        var a = 1;
+
+        function a() {
+            return 2;
+        }
+
+        console.log(a); // 会打印 1,调用变量a
+
+        a()//变量会覆盖函数,会优先调用变量，所有以函数方式调用会报错，“a不是一个函数”
+
+
+    </script>
+</body>
+
+</html>

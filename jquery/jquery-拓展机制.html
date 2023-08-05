@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <input type="checkbox" name="" id="">aaa
+    <input type="checkbox" name="" id="">bbb
+    <input type="checkbox" name="" id="">ccc
+    <input type="checkbox" name="" id="">ddd
+    <script>
+
+        //$拓展
+        // $.extend({
+        //     xym:function(){
+        //         console.log("xym")
+        //     } 
+        // })
+        // $.xym()
+
+        //链式拓展
+        $.fn.extend({
+            allCheck(ischeck){
+                console.log("check",ischeck)
+                console.log(this)
+                this.prop("checked",ischeck)
+                return this
+            }
+        })
+
+        $("input[type=checkbox]").allCheck(true).css({
+            width:100,
+            height:100
+        })
+
+
+
+
+    </script>
+</body>
+</html>

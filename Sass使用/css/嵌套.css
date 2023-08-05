@@ -1,0 +1,21 @@
+div {
+  width: 100px;
+  height: 100px;
+}
+
+div p {
+  width: 50px;
+  height: 50px;
+}
+
+div p > span {
+  color: red;
+}
+
+div p > span:hover {
+  background-color: blue;
+}
+
+div p > span:hover {
+  background-color: black;
+}

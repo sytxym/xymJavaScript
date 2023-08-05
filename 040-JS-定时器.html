@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn1">清空定时器-延迟</button>
+    <button id="btn2">清空定时器-间隔</button>
+    
+    <script>
+
+        //倒计时
+        //=> es6的函数表达式
+        // setTimeout(() => {
+        //     console.log("mmm")
+        // }, 3000);
+
+        //也可以函数传进来
+        function greet() {
+            alert('Hello');
+        }
+        var timerId = setTimeout(greet, 2000); // 2 秒后执行 greet 函数
+
+
+        function showTime() {
+            console.log(new Date().toTimeString());
+        }
+
+        var timerId2=setInterval(showTime, 1000); // 每 1 秒执行一次 showTime 函数
+
+
+        // 总的来说,setTimeout() 用于执行一次性的定时任务,setInterval() 用于执行重复性的定时任务。
+
+        btn1.onclick=function(){
+            clearTimeout(timerId)//清空定时器
+        }
+
+        btn2.onclick=function(){
+            clearInterval(timerId2)
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

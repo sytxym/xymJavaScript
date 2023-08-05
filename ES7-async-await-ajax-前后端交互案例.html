@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="mytext">
+    <button id="myadd">add</button>
+    <ul class="list"></ul>
+
+    <!-- ajax 面向对象 模块化方式 -->
+    <script type="module">
+
+        import ajax from '/js/promise_ajax.js'
+        // console.log(ajax)
+
+        class TodoList {
+            constructor(select) {
+                this.listEle = document.querySelector(select)
+                this.listdata = []//列表数据
+
+                this.init()
+            }
+
+
+            //初始化工作
+            init() {
+
+                //绑定事件
+                this.bindEvent()
+
+                // 获取数据
+                this.getlist().then(res => {
+                    this.listdata = res
+                    this.render()
+                })
+            }
+
+            //绑定事件
+            bindEvent() {
+                this.listEle.onclick = (evt) => {
+                    if (evt.target.nodeName === "BUTTON") {
+                        this.removeItem(evt.target)
+                    }
+                }
+
+                myadd.onclick = function () {
+                    console.log(mytext.value)
+                    obj.addItem(mytext.value)
+                }
+            }
+
+            //获取列表数据
+            async getlist() {
+                var res = await ajax(
+                    {
+                        url: "http://localhost:3000/list",
+                    })
+                console.log("列表：", res)
+                return res
+            }
+
+            //渲染
+            render() {
+                // console.log("render",this.listdata)
+                this.listEle.innerHTML = this.listdata.map((item,position) => {
+                   return `<li>${item.text}<button data-index=${item.id} data-position=${position}>del</button></li>`
+                }).join("")
+            }
+
+            //添加
+            async addItem(text) {
+                var res = await ajax({
+                    method: "POST",
+                    url: "http://localhost:3000/list",
+                    data: {
+                        text: text
+                    },
+                    headers: { 'Content-Type': 'application/json' },
+                    timeout: 5000  // 5 seconds
+                })
+                console.log("添加", res)
+                this.listdata = [...this.listdata, res]
+                this.render()
+            }
+
+            //移除
+            async removeItem(target) {
+                target.parentNode.remove()
+
+                //接口删除
+                var res = await ajax({
+                    method: "DELETE",
+                    url: `http://localhost:3000/list/${target.dataset.index}`,
+                    headers: { 'Content-Type': 'application/json' },
+                    timeout: 5000  // 5 seconds
+                })
+
+                //从本地集合也要移除，不然每次添加会在没有删除之前添加,target.dataset.position是点击的下标索引
+                var dr=this.listdata.splice(target.dataset.position,1)
+                console.log("删除", dr)
+
+                alert("删除成功")
+            }
+
+
+        }
+
+        var obj = new TodoList(".list")
+        console.log(obj)
+
+
+
+        console.log("显示加载中...")
+
+        async function test() {
+            await Promise.all([
+                ajax(
+                    {
+                        url: "http://localhost:3000/list",
+                        headers: { 'Content-Type': 'application/json' },
+                    }),
+                ajax(
+                    {
+                        url: "http://localhost:3000/newlist",
+                        headers: { 'Content-Type': 'application/json' }
+                    })
+            ]).then(res => {
+                console.log(res)
+                // document.write(res)
+                console.log("加载完了！！！！")
+            }).catch(error => {
+                console.log(error);
+            });
+        }
+
+        test()
+
+
+    </script>
+</body>
+
+</html>

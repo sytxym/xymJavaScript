@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <script>
+        let originalObj = { name: 'John', age: 30,location:{city:"长沙",province:"湖南省"},hobby:["唱歌","跳舞","王者游戏"]};
+        let originalObj2={}
+        // let originalObj2 = originalObj//=这是浅复制
+        // $.extend(originalObj2, originalObj)//$.extend这属于浅复制
+        // originalObj2.name="xym"
+        // originalObj2.hobby[0]="刷抖音"//这样改深层的属性值，还是可以跟着一起改，所以$.extend这属于浅复制
+        // console.log(originalObj,originalObj2)
+
+
+        //深复制
+        $.extend(true,originalObj2,originalObj,{m:1,n:2})
+        originalObj.hobby[0]="佳佳雷"
+        console.log(originalObj,originalObj2)
+
+        
+
+    </script>
+</body>
+
+</html>

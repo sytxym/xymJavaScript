@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab ul{
+            height: 50px;
+            line-height: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .tab ul li{
+            flex: 1;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 这里不通过hover实现，要动态切换 */
+        /* .tab ul li:hover{
+            border-bottom: 2px solid red;
+            color: red;
+        } */
+
+
+        .active{
+            border-bottom: 2px solid red;
+            color: red;
+        }
+
+         ul{
+            list-style: none;
+        }
+
+
+        .list  li{
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .list li img{
+            float: left;
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        .list li p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+        <div class="tab">
+            <ul>
+                <li class="active" id="item1">正在热映</li>
+                <li id="item2">即将上映</li>
+            </ul>
+        </div>
+        
+        <div class="list">
+            <ul>
+                <!-- <li>
+                    <img src="https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70" alt="">
+                    <h3>电影名称</h3>
+                    <p>观众评分：9.0</p>
+                    <span>我是简介</span>
+                </li> -->
+                
+              
+            </ul>    
+    
+        </div>
+   
+
+    <script>
+
+        //模拟后台返回数据
+        var dataList=[
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"神奇动物",
+                  grade:8.0,
+                  desc:"恐怖片"
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"美人鱼",
+                  grade:9.0,
+                  desc:"搞笑片"  
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"夏洛特烦恼",
+                  grade:9.8,
+                  desc:"喜剧片、爱情片"
+                },  {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"神奇动物",
+                  grade:8.0,
+                  desc:"喜剧片、爱情片"
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"美人鱼",
+                  grade:9.0,
+                  desc:"搞笑片"  
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"夏洛特烦恼",
+                  grade:9.8,
+                  desc:"搞笑片"  
+                }
+        ]
+
+        //动态添加列表数据
+        var datas=dataList.map(function(item){
+            return `<li>
+                <img src="${item.picUrl}" alt="">
+                <h3>${item.title}</h3>
+                <p>观众评分：${item.grade}</p>
+                <span>类型：${item.desc}</span>`
+        })
+
+        var oul=document.querySelector(".list ul")
+        oul.innerHTML=datas.join("")
+
+        console.log(datas.join(""))
+
+        //添加tab切换样式
+        item1.onclick=function(){
+            item1.classList.add("active")
+            item2.classList.remove("active")
+        }
+
+        item2.onclick=function(){
+            item1.classList.remove("active")
+            item2.classList.add("active")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+{
+    "goods": [
+        {
+            "id": 1,
+            "title": "华为mate50",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/0/0.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "小米12",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/1/1.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "三星s20",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/2/3.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "小米13",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/2/4.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "小米12s",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/2/3.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "荣耀80",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/0/0.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "红米k50",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/0/0.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "红米游戏手机",
+            "categoryId": 3,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/1/2.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "neo游戏手机",
+            "categoryId": 3,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/1/1.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "iqoo游戏手机",
+            "categoryId": 3,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/2/4.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 11,
+            "title": "华为p50pro",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/2/4.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 12,
+            "title": "vivox30",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8099,
+            "goodcomment": "99%",
+            "proter": "/2/3.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 13,
+            "title": "oppo r30",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 8010,
+            "goodcomment": "99%",
+            "proter": "/2/4.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 14,
+            "title": "oppo a30",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 1099,
+            "goodcomment": "97%",
+            "proter": "/1/2.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 15,
+            "title": "三星a10",
+            "categoryId": 2,
+            "feature": "因特尔i5处理器 1800万超清 5.83英寸屏幕",
+            "price": 999,
+            "goodcomment": "96%",
+            "proter": "/1/1.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 16,
+            "title": "小米游戏手机",
+            "categoryId": 3,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 3699,
+            "goodcomment": "98%",
+            "proter": "/0/0.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 17,
+            "title": "一加手机9",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 3800万超清 6.90英寸屏幕",
+            "price": 3099,
+            "goodcomment": "94%",
+            "proter": "/2/3.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 18,
+            "title": "iphone14",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 5999,
+            "goodcomment": "98%",
+            "proter": "/2/4.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 19,
+            "title": "iphonex",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 3900,
+            "goodcomment": "99%",
+            "proter": "/0/0.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 20,
+            "title": "iphone11",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 3499,
+            "goodcomment": "97%",
+            "proter": "/1/2.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 21,
+            "title": "iphone14pro",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 6899,
+            "goodcomment": "99%",
+            "proter": "/1/1.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 22,
+            "title": "荣耀90",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 2499,
+            "goodcomment": "93%",
+            "proter": "/1/2.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 23,
+            "title": "红米note11",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 899,
+            "goodcomment": "99%",
+            "proter": "/1/1.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 24,
+            "title": "魅族20",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 3598,
+            "goodcomment": "88%",
+            "proter": "/2/3.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 25,
+            "title": "小米11青春版",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 1169,
+            "goodcomment": "99%",
+            "proter": "/2/4.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 26,
+            "title": "oppo k10x",
+            "categoryId": 2,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 1299,
+            "goodcomment": "90%",
+            "proter": "/2/3.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        },
+        {
+            "id": 27,
+            "title": "华为p60",
+            "categoryId": 1,
+            "feature": "因特尔i7处理器 4800万超清 6.90英寸屏幕",
+            "price": 4588,
+            "goodcomment": "99%",
+            "proter": "/1/1.jpg",
+            "slide": [
+                "/images/1/detail_1.jpg",
+                "/images/1/detail_2.jpg",
+                "/images/1/detail_3.jpg"
+            ],
+            "desc": [
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70"
+            ]
+        }
+    ]
+}

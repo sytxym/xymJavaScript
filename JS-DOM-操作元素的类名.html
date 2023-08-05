@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="box" class="item item1 item2"></div>
+
+    <script>
+        /* className 优点：暴力*/
+        // console.log(box.className) //获取类名
+        // box.className="item item1"//修改
+        // box.className+=" item3" //添加class
+
+        /* classList 优点：精确*/
+        console.log(box.classList)
+        box.classList.add("item3")//添加class
+        box.classList.remove("item1")//移除class
+        box.classList.toggle("item5")//切换class，没有就添加，有就删除
+
+    </script>
+</body>
+</html>

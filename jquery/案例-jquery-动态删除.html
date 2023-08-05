@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+<body>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+
+        var arr=["111","222","333","444","555"]
+        for (let i = 0; i < arr.length; i++) {
+            $(`<li>${arr[i]}
+                 <button>删除</button>   
+                </li>`).appendTo($("#list"))
+        }
+
+        $("#list button").click(function(){
+            console.log(this)
+            $(this).parent().remove()
+        })
+
+        // $("#list").on("click","button",function(){
+        //     $(this).parent().remove()
+        // })
+
+    </script>
+</body>
+</html>

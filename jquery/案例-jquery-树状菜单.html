@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+    <style>
+        .tree li {
+            list-style-type: none;
+            /* 去掉列表点 */
+        }
+
+        .tree ul {
+            display: none;
+            /* 默认隐藏子菜单 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tree">
+        <li>
+            <a href="#">节点1</a>
+            <ul>
+                <li><a href="#">子节点1</a></li>
+                <li><a href="#">子节点2</a>
+                    <ul>
+                        <li><a href="#">孙节点1</a></li>
+                        <li><a href="#">孙节点2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">节点1</a>
+            <ul>
+                <li><a href="#">子节点1</a></li>
+                <li><a href="#">子节点2</a>
+                    <ul>
+                        <li><a href="#">孙节点1</a></li>
+                        <li><a href="#">孙节点2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <script>
+        $(".tree li a").click(function () {
+            var children = $(this).next("ul");
+            if (children.is(":visible")) {
+                children.hide();
+            } else {
+                children.show();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

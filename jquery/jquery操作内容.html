@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <div id="someElement"><h1>我是div</h1></div>
+    <input type="text" value="hahaha">
+    <script>
+        var html = $("#someElement").html();
+        console.log(html)
+        // $("#someElement").html("<b>Bold text</b>")
+
+        var text = $("#someElement").text()
+        console.log(text)
+        $("#someElement").text("Some new text");
+
+        var value = $("input").val();
+        console.log(value)
+        $("input").val("new value")
+
+
+    </script>
+</body>
+
+</html>

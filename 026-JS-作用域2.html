@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*JavaScript 函数有两种作用域:
+ 
+         1. 全局作用域: 定义在函数外部的变量。这些变量可以在脚本的任何地方访问。
+ 
+         2. 局部作用域: 定义在函数内部的变量。这些变量只能在该函数内访问。
+ 
+         函数内部还可以定义嵌套函数, 这些嵌套函数可以访问外部函数的局部变量。
+ 
+         例如: */
+
+        // 全局变量
+        var num = 2;
+
+        function outer() {
+            // 局部变量
+            var num = 3;
+
+            function inner() {
+                var num = 4;
+
+                console.log(num);  // 4 - 变量重名，先访问自己的局部变量，就近原则
+                console.log(num2); // ReferenceError: num2 is not defined
+
+                console.log(num1); // 3 - 内部函数可以访问外部函数的局部变量
+            }
+
+            var num1 = 5;
+
+            inner();
+        }
+
+        outer();
+
+        console.log(num); // 2 - 全局变量可以在任何地方访问
+
+/*         所以函数的作用域规则是:
+        - 内部函数可以访问外部函数的局部变量
+            - 但外部函数不能访问内部函数的局部变量
+            - 全局变量可以在任何地方访问 */
+
+    </script>
+</body>
+
+</html>

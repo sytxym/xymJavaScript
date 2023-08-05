@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+
+<body>
+    <input type="checkbox" id="allCk">全选/反选
+    <hr>
+    <ul class="shop">
+        <li>
+            <input type="checkbox" name="" id="">商品1
+        </li>
+        <li>
+            <input type="checkbox" name="" id="">商品2
+        </li>
+        <li>
+            <input type="checkbox" name="" id="">商品3
+        </li>
+        <li>
+            <input type="checkbox" name="" id="">商品4
+        </li>
+    </ul>
+
+    <script>
+
+        var allCk = document.querySelector("#allCk")
+        var allItems = document.querySelectorAll(".shop input")
+
+
+        allCk.onclick = function () {
+
+            for (let i = 0; i < allItems.length; i++) {
+                const element = allItems[i];
+                element.checked = allCk.checked
+            }
+        }
+
+        for (let index = 0; index < allItems.length; index++) {
+            // allItems[index].onclick = countDo
+            allItems[index].onclick = filterDo
+        }
+
+        //过滤器实现
+        function filterDo() {
+            var allItemArr = Array.from(allItems)//对象装数组，方便用过滤器，也可以用变量计数
+            console.log(typeof allItems, typeof allItemArr)
+            var t = allItemArr.filter(function (item) {//过滤出选中的
+                return item.checked === true
+            })
+            console.log("count", t.length, allItems.length)
+
+            //选中的项长度等于总长度，就全选按钮勾上，否则取消
+            t.length === allItems.length ? allCk.checked = true : allCk.checked = false
+        }
+
+        //定义变量计数实现
+        function countDo() {
+            var count = 0
+            for (let i = 0; i < allItems.length; i++) {
+                const item = allItems[i];
+                if (item.checked) {
+                    count++
+                }
+            }
+
+            console.log("mycount", count)
+            if (count == allItems.length) {
+                allCk.checked = true
+            } else {
+                allCk.checked = false
+            }
+        }
+
+    </script>
+</body>
+
+</html>

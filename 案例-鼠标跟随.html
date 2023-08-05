@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+            width: 200px;
+            height: 50px;
+            background: yellow;
+            position: relative;
+        }
+
+        #box p{
+            width: 300px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            display: none;
+
+            /* 不会有鼠标事件 */
+            pointer-events: none;
+
+            z-index: 100;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div id="box">
+        xym头像
+        <p>
+            xym介绍
+        </p>
+    </div>
+    <script>
+
+        box.onmouseover=function(){
+            // console.log(this.firstElementChild)
+            this.firstElementChild.style.display="block"
+        }
+
+        box.onmouseout=function(){
+            this.firstElementChild.style.display="none"
+        }
+
+        box.onmousemove=function(evt){
+            console.log(evt.offsetX,evt.offsetY)
+            // this.firstElementChild.style.left=evt.offsetX+50+"px"
+            // this.firstElementChild.style.top=evt.offsetY+50+"px"
+
+            this.firstElementChild.style.left=evt.offsetX+"px"
+            this.firstElementChild.style.top=evt.offsetY+"px"
+
+        }
+
+    </script>
+</body>
+</html>

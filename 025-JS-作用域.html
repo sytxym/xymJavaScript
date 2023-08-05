@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mname="xym"//这个就是一个全局作用域变量,别的script里面也可调用
+
+        function test(){
+            var nickName="123"
+            console.log("test",nickName)
+        }
+        
+        // console.log(nickName)//这里调用不到局部变量
+    </script>
+
+    <script>
+        console.log(mname)
+        test()
+    </script>
+</body>
+</html>

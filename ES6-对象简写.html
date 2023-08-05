@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="myusername"><br>
+    <input type="password" name="" id="mypassword">
+    <button id="login">登录</button>
+    <script>
+
+        login.onclick = () => {
+            let username = myusername.value
+            let password = mypassword.value
+            console.log(username,password)
+
+            //key和变量名一样时，可以省略(对象简写)
+            var obj ={
+                username,
+                password
+            }
+
+            console.log("发给后端的解构",obj)
+        }
+
+        var obj={
+            a:1,
+            // getName:function(){
+            //     console.log(this.a)
+            // }
+
+            getName(){//:function 也可以简写
+                console.log(this.a)
+            }
+        }
+
+        obj.getName()
+
+
+
+    </script>
+</body>
+
+</html>

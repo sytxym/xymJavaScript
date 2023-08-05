@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <script>
+
+        //ajaxStart
+        $(window).ajaxStart(function () {
+            console.log("第一个ajax发送之前执行")
+            console.log("显示loading")
+        })
+
+        //ajaxSend
+        $(window).ajaxSend(function () {
+            console.log("每一个ajax发送之前执行")
+            console.log("显示loading")
+        })
+
+        //ajaxSuccess
+        $(window).ajaxSuccess(function () {
+            console.log("每一个ajax发送成功会触发")
+            console.log("隐藏loading")
+        })
+
+        //ajaxError
+        $(window).ajaxError(function () {
+            console.log("每一个ajax失败会触发")
+            console.log("隐藏loading")
+        })
+
+          //ajaxComplete
+          $(window).ajaxComplete(function () {
+            console.log("每一个ajax,成功或失败都会触发一次")
+            console.log("隐藏loading")
+        })
+
+        //ajaxStop
+        $(window).ajaxStop(function () {
+            console.log("最后一个ajax发送成功会触发")
+            console.log("隐藏loading")
+        })
+
+
+        //发送请求
+        $.ajax({
+            url: "https://m.maizuo.com/gateway?cityId=310100&pageNum=1&pageSize=10&type=1&k=2464406",
+            method: "GET",
+            headers: {
+                'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.2.1","e":"1688721161304689274945537","bc":"310100"}',
+                'X-Host': 'mall.film-ticket.film.list'
+            }
+        }).then(res => {
+            console.log(res.data.films[0].poster)
+        }).catch(err => {
+            console.log(err)
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Person{
+            constructor(name,age){
+                this.name=name
+                this.age=age
+            }
+
+            say(){
+                console.log(this.name,"hello")
+            }
+        }
+
+        class student extends Person{
+            constructor(name,age,grade){
+                super(name,age)
+                this.grade=grade
+            }
+
+            say(){
+                super.say()
+                console.log(this.name,"您好")
+            }
+        }
+
+        var obj=new student("xym",20,100)
+        obj.say()
+        console.log(obj)
+
+    </script>
+</body>
+</html>

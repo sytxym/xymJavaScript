@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // var a = "100"
+        // var b = Number(a)//转换成Number
+        // console.log(a,b)
+
+        // var n="abc"
+        // console.log(Number(n))//输出 NaN ，意思式not a number，不能转换成number 
+
+        // var flag=true
+        // var s=Number(flag)//输出 1，true：1 false：0
+        // console.log(s)
+
+
+        // number可以转换成小数，parseInt不能，但paserInt可以转换数字与字母结合的变量
+        // var a="123adb"
+        // var b=parseInt(a)//只要有数字，就可以转换，结果输出123
+        // console.log(a,b)
+
+        // parseFloat可以保留小数
+        var a="123.45adc"
+        var b=parseFloat(a)
+        console.log(a,b)
+
+        //除了加法，-0，/1 ， *1 也可以转成number类型
+        var a="100"
+        var b=a-0
+        console.log(typeof a,typeof b)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

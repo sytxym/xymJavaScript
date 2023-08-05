@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+
+        html,body{
+            height: 100%;
+        }
+
+        ul li{
+            overflow: hidden;
+            height: 150px;
+        }
+
+        ul li img{
+            float: left;
+            width: 80px;
+            margin-right: 20px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <h1>标题</h1>
+    <ul id="list">
+        <li>
+            <img src="https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70" alt="">
+            <h3>神奇动物</h3>
+        </li>
+    </ul>
+
+
+    <script>
+         //模拟后台返回数据
+         var dataList=[
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"神奇动物",
+                  grade:8.0,
+                  desc:"恐怖片"
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"美人鱼",
+                  grade:9.0,
+                  desc:"搞笑片"  
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"夏洛特烦恼",
+                  grade:9.8,
+                  desc:"喜剧片、爱情片"
+                },  {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"神奇动物",
+                  grade:8.0,
+                  desc:"喜剧片、爱情片"
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"美人鱼",
+                  grade:9.0,
+                  desc:"搞笑片"  
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"夏洛特烦恼",
+                  grade:9.8,
+                  desc:"搞笑片"  
+                }
+        ]
+
+         //模拟后台返回数据
+         var loadMoreData=[
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"神奇动物",
+                  grade:8.0,
+                  desc:"恐怖片"
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"美人鱼",
+                  grade:9.0,
+                  desc:"搞笑片"  
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"夏洛特烦恼",
+                  grade:9.8,
+                  desc:"喜剧片、爱情片"
+                },  {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"神奇动物",
+                  grade:8.0,
+                  desc:"喜剧片、爱情片"
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+                  title:"美人鱼",
+                  grade:9.0,
+                  desc:"搞笑片"  
+                },
+                {
+                  picUrl:"https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70",
+                  title:"夏洛特烦恼",
+                  grade:9.8,
+                  desc:"搞笑片"  
+                }
+        ]
+
+
+        renderHtml(dataList)
+
+        //渲染列表
+        function renderHtml(arr){
+        //     list.innerHTML+=arr.map(function(item){
+        //         return `<li>
+        //     <img src="${item.picUrl}" alt="">
+        //     <h3>${item.title}</h3>
+        // </li>`
+        //     }).join("")
+
+            for(var i=0;i<arr.length;i++){
+              var oli=document.createElement("li")
+              oli.innerHTML=`<li>
+              <img src="${arr[i].picUrl}" alt="">
+              <h3>${arr[i].title}</h3>
+              </li>`
+
+              list.appendChild(oli)
+            }
+        }
+
+        //监听滚动
+        var isLoading=false
+        window.onscroll=function(){
+            var listHeight=list.offsetHeight //获取这个元素的高度
+            var listTop=list.offsetTop  //获取这个元素的偏移量
+            // listHeight+listTop   //整个页面的高度 或者就是可滚动的高度
+            console.log(listHeight,listTop)
+           
+            var scrollTop=document.documentElement.scrollTop||document.body.scrollTop//滚动的距离
+
+            var windowHeight=document.documentElement.clientHeight //可视窗口的高度
+
+            // console.log(scrollTop,windowHeight)
+            // console.log(Math.round(scrollTop+windowHeight))
+
+            // if(Math.round(scrollTop+windowHeight)===(listHeight+listTop)){
+            //     console.log("到底了")
+            // }
+
+
+            if(isLoading){
+                return
+            }        
+            if((listHeight+listTop)-Math.round(scrollTop+windowHeight)<50){
+                console.log("快要到底了")
+                isLoading=true
+                
+                //加载下一页数据
+                setTimeout(() => {//模拟网络情况，加载慢一些
+                    renderHtml(loadMoreData)
+                    isLoading=false
+                }, 1000);
+             
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+
+    <div class="box2">
+        <h1></h1>
+        <ul></ul>
+        <img src="" alt="" style="width: 200px;">
+    </div>
+
+    <script>
+
+        var jsonProvince = {
+            title: "省份",
+            list: ["湖南省", "河南省", "广东省", "云南省"]
+        }
+
+        var jsonCity = {
+            title: "城市",
+            url: "https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70",
+            list: ["长沙", "上海", "重庆", "成都", "北京", "昆明", "广州", "深圳", "杭州"]
+        }
+
+
+        class CreateList {
+            constructor(boxSelect, data = {}) {
+                this.ele = document.querySelector(boxSelect)
+                this.title = data.title
+                this.list = data.list
+            }
+
+            render() {
+                //渲染页面
+                var h1 = this.ele.querySelector("h1")
+                var ul = this.ele.querySelector("ul")
+
+                // console.log(h1)
+                // console.log(ul)
+
+                h1.innerHTML = this.title
+                ul.innerHTML = this.list.map(item => {
+                    return `<li>${item}</li>`
+                }).join("")
+            }
+        }
+
+        var obj1 = new CreateList(".box1", jsonProvince)
+        obj1.render()
+
+
+        class CreateImgList extends CreateList {
+            constructor(boxSelect, data) {
+                super(boxSelect, data)
+                this.imgurl = data.url //新增的属性
+            }
+
+            render() {
+                super.render()
+                var img = this.ele.querySelector("img")
+                console.log(this.imgurl)
+                img.src = this.imgurl
+            }
+        }
+
+        var obj2 = new CreateImgList(".box2", jsonCity)
+        console.log(obj2)
+        obj2.render()
+
+
+
+    </script>
+</body>
+
+</html>

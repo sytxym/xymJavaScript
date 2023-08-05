@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html,body{
+            height: 100%;
+        }
+
+        body{
+            height: 2000px;
+            width: 2000px;
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <input type="text" id="username">
+    <div id="box"></div>
+
+    <script>
+        username.onkeyup=function(event){
+            console.log(event.code)
+
+            if(event.keyCode===13)//按了回车键
+            {
+                console.log("创建节点")
+            }
+        }
+
+        function myClick(evt,name){
+            console.log(evt.clientX,evt.clientY,name)// clientX clientY 距离浏览器可视窗口左边和上边的坐标值
+            console.log(evt.pageX,evt.pageY,name)// pageX page 距离文档左边和上边的坐标值
+            console.log(evt.offsetX,evt.offsetY,name)// offsetX offsetY 距离盒子的左边和上边的坐标值
+            // console.log(window.event.x,window.event.y)
+        }
+
+
+        box.onclick=function(event){
+            event=event||window.event//兼容ie 8以下
+            myClick(event,"hahha")
+        }
+    </script>
+
+</body>
+</html>

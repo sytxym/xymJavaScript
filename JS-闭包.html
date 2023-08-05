@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //正常函数 ：
+        //name变量会被销毁
+        // function test(){
+        //     var name="xym"
+        //     console.log(name)
+        // }
+
+        // test()
+
+
+        /* 
+        闭包模拟：
+        函数有返回值，而且返回值必须是复杂类型，而且要赋值给外面的变量
+        复杂类型不会被销毁，name变量还是会被销毁
+        */
+        // function test() {
+        //     var name = "XYM"
+        //     console.log(name)
+        //     var obj = {
+        //         a: 1,
+        //         b: 2
+        //     }
+        //     return obj
+        // }
+
+        // var obj1=test()
+        // var obj2=test()
+        // console.log(obj1===obj2)
+
+        /* 
+        函数内部返回一个函数（复杂数据类型），被外界所引用
+        这个内部函数就不会被销毁回收
+        内部函数所用到的外部函数的变量也不会被回收
+        这样就构成了闭包
+
+        优势：让临时变量永驻内存
+        缺点：内存泄漏 需要fun=null清空内存
+        */
+
+        // function outer() {
+        //     var name="xym"
+        //     return function () {//函数不会被销毁
+        //         return name+"111"//引用这个name，这个nam e也不会销毁
+        //     }
+        // }
+
+        // var func=outer()
+        // console.log(func())
+
+
+        //闭包应用 函数柯里化
+        //类似请求 http://www.a.com/aaa http://www.a.com/ccc http://www.a.com/bbb
+        //下面就可以把域名（url）永住内存中，每次请求就不需要写了
+        function FetchContainer(url){
+            return function(path){
+                return fetch(url+path)
+            }
+        }
+
+        var fetcha=FetchContainer("http://www.a.com")
+
+        fetcha("/aaa").then(res=>res.json()).then(res=>console.log(res))
+        fetcha("/bbb").then(res=>res.json()).then(res=>console.log(res))
+        fetcha("/ccc").then(res=>res.json()).then(res=>console.log(res))
+
+        fetcha=null //用完就清除内存
+
+
+
+
+    </script>
+</body>
+
+</html>

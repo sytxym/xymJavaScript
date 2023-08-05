@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <style>
+        #box{
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="width: 100px;"></div>
+    <ul>
+        <li>3131</li>
+        <li>3131</li>
+        <li>3131</li>
+        <li>3131</li>
+        <li>3131</li>
+    </ul>
+    <script>
+        console.log($("#box").css("width"))
+        console.log($("#box").css("height"))
+        console.log($("#box").css("background-color"))
+
+        $("#box").css("width","200px")
+        $("#box").css("height",200)
+        $("#box").css("background","green")
+
+        $("ul li").css("color","red")//所有的li，隐式迭代都设置
+
+        $("ul li:eq(3)").css({
+            width:100,
+            height:20,
+            background:"yellow"
+        })//所有的li，隐式迭代都设置
+    </script>
+</body>
+</html>

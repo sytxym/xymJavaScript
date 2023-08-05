@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+    <style>
+        #element{
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element">
+
+    </div>
+
+    <script>
+
+        // 要使用jQuery获取元素的尺寸, 可以使用以下方法:
+
+        // 1. width() - 获取元素的宽度(不包括内边距和边框)
+
+        var width = $('#element').width()
+        console.log("width",width)
+
+        // 2. height() - 获取元素的高度(不包括内边距和边框)
+
+        var height = $('#element').height()
+        console.log("height",height)
+
+        // 3. innerWidth() - 获取元素的宽度(包括内边距, 但不包括边框和外边距)
+
+        var innerWidth = $('#element').innerWidth()
+        console.log("innerWidth",innerWidth)
+
+        // 4. innerHeight() - 获取元素的高度(包括内边距, 但不包括边框和外边距)
+
+        var innerHeight = $('#element').innerHeight()
+        console.log("innerHeight",innerHeight)
+
+        // 5. outerWidth() - 获取元素的宽度(包括内边距和边框, 但不包括外边距)
+
+        var outerWidth = $('#element').outerWidth()
+        console.log("innerWidth",outerWidth)
+
+
+        // 6. outerHeight() - 获取元素的高度(包括内边距和边框, 但不包括外边距)
+
+        var outerHeight = $('#element').outerHeight()
+        console.log("outerHeight",outerHeight)
+
+        // 7. outerWidth(true) - 获取元素的宽度(包括内边距、边框和外边距)
+
+        var outerWidthWithMargin = $('#element').outerWidth(true)
+        console.log("outerWidthWithMargin",outerWidthWithMargin)
+
+
+    </script>
+</body>
+
+</html>

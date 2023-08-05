@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // JavaScript中的switch语句用于基于不同的条件有不同的执行结果。
+
+        // switch语句的基本语法是:
+        switch (expression) {
+            case x:
+                // code block
+                break;
+            case y:
+                // code block   
+                break;
+            default:
+            // code block
+        }
+
+        // - expression可以是任何类型的值。
+        // - case后跟匹配的值。当expression与case的值相匹配时, 相应的代码块将被执行。
+        // - break关键字用于终止switch语句块。如果省略break, 执行会继续到下一个case。
+        // - default可选。如果没有匹配的case, 则执行default代码块。
+
+        // 例如:
+
+        let grade = 'A';
+
+        switch (grade) {
+            case 'A':
+                console.log('Excellent!');
+                break;
+            case 'B':
+                console.log('Good');
+                break;
+            case 'C':
+                console.log('Average');
+                break;
+            case 'D':
+                console.log('Poor');
+                break;
+            default:
+                console.log('Not a valid grade');
+        }
+        // 上面的switch语句根据grade的值执行不同的代码块。
+
+
+        // 你也可以在case中使用表达式:
+        // let grade = 'B';
+
+        // switch (true) {
+        //     case grade === 'A':
+        //         console.log('Excellent!');    
+        //         break;
+        //     case grade === 'B':    
+        //         console.log('Good');
+        //         break;  
+        // }
+
+        // switch语句提供了一个优雅的替代多重if - else语句的方法。
+
+
+    </script>
+</body>
+
+</html>

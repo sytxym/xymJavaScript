@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // sayHello();
+
+        // function sayHello() {
+        //     console.log('Hello!');
+        // }
+        // 上面的代码能正常运行,因为声明式函数预解析会先找到sayHello()函数的声明,然后再执行代码。
+
+        // 但是函数表达式（赋值式）不会预解析:
+        sayHello();
+        
+        var sayHello = function () {
+            return "Hello!"
+        }
+
+
+
+    </script>
+</body>
+
+</html>

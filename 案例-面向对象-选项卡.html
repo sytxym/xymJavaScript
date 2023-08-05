@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            width: 500px;
+
+        }
+
+        .header li {
+            flex: 1;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .box {
+            position: relative;
+            height: 200px;
+        }
+
+        .box li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 200px;
+            background: yellow;
+            display: none;
+        }
+
+        .header .active {
+            background: red;
+        }
+
+        .box .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container1">
+        <ul class="header">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <ul class="box">
+            <li class="active">内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+            <li>内容4</li>
+        </ul>
+    </div>
+
+    <div class="container2">
+        <ul class="header">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <ul class="box">
+            <li class="active">内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+            <li>内容4</li>
+        </ul>
+    </div>
+
+    <!-- <script src="js/tabs.js"></script> -->
+
+
+    <script type="module">
+          
+        import MyTabs from '/js/class_tabs.js' //es6 class
+        // import MyTabs from '/js/tabs.js' //js 面向对象原型
+
+        new MyTabs(".container1","click")
+        new MyTabs(".container2","mouseover")
+
+    </script>
+</body>
+
+</html>

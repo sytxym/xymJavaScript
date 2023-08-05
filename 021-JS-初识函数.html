@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //语法
+        // function functionName(parameters) {
+
+        // }
+
+        //声明函数
+        function cf() {
+            for (var m = 1; m <= 9; m++) {
+                for (var i = 1; i <= m; i++) {
+                    document.write("<span>" + m + "*" + i + "=" + m * i + "</span>")
+                }
+                document.write("<br>")
+            }
+        }
+
+        // 赋值式函数
+        var test = function () {
+            document.write("<br>我是赋值式函数")
+        }
+
+        // 带参数的函数
+        function add(x, y) {
+            return x + y;
+        }
+
+
+
+        //求是不是质数
+        function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return n > 1;
+        }
+
+
+        //调用函数    
+        cf()
+        test()
+
+        var sum = add(3, 3)
+        console.log(sum)
+
+        console.log(isPrime(71))
+    </script>
+</body>
+
+</html>

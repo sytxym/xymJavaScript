@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">抽奖</button>
+
+    <script>
+
+        //dom0 解绑
+        // btn.onclick=function(){
+        //     console.log("谢谢惠顾")
+
+        //     this.onclick=null  //解绑
+        // }
+
+        //dom2 解绑
+
+        function myClick(){
+            console.log("谢谢惠顾")
+            this.removeEventListener("click",myClick)
+        }
+
+        btn.addEventListener("click",myClick)
+
+        // btn.removeEventListener("click",myClick)
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            height: 500px;
+            /* padding: 10px; */
+            /* border: 5px solid red; */
+            background-color: yellow;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #myparent{
+            width: 300px;
+            height: 300px;
+            background: blue;
+            overflow: hidden;
+         
+        }
+
+        #child{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        div{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="myparent">
+             <div id="child"></div>   
+        </div>
+    </div>
+  <script>
+    // console.log(window.getComputedStyle(box).width)
+
+    //offsetWidth 获取元素的尺寸（边框+padding+内容宽度）
+    // console.log(box.offsetWidth)
+    // console.log(box.offsetHeight)
+   
+    //clientWidth 获取元素的尺寸（padding+内容宽度，不包含边框）
+    // console.log(box.clientWidth,box.clientHeight)
+
+    
+
+    //获取偏移量  参考点：定位的父级  如果父级元素都没有定位，偏移量的参考相对body
+    console.log(child.offsetLeft,child.offsetTop)
+    console.log(myparent.offsetLeft,myparent.offsetTop)
+    console.log(box.offsetLeft,box.offsetTop)
+
+    //可视窗口的尺寸
+    console.log("宽度",document.documentElement.clientWidth)
+    console.log("高度",document.documentElement.clientHeight)
+
+
+
+  </script>
+</body>
+</html>

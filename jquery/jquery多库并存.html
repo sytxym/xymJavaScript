@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/myjquery.js"></script>
+    <script src="lib/jquery-3.7.0.js"></script>
+  
+</head>
+<body>
+    <script>
+
+        // $.noConflict() //jquery交出$ ,把$丢给别人用,所以$以后就是myjquery.js的$
+        var x=$.noConflict(true)//交出$,jquery,别人用$,juqery,自己用x这个符号
+        console.log($)
+        console.log(jQuery)
+        console.log(x(window))
+
+
+    </script>
+</body>
+</html>

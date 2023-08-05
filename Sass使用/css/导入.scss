@@ -1,0 +1,6 @@
+@import "base.scss";//可以引用公用的样式
+
+.box{
+    color: $color;
+    font-size: $fontsize;
+}

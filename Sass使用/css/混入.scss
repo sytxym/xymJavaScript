@@ -1,0 +1,16 @@
+
+//类似定义了一个方法 函数理念
+@mixin xym_transition($a,$b){
+    transition:  $a $b;
+    -webkit-transition:  $a $b;
+    -moz-transition:  $a $b;
+}
+
+
+.box{
+    @include xym_transition(all,2s)
+}
+
+.box2{
+    @include xym_transition(width,3s)
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            list-style: none;
+            border: 1px solid blueviolet;
+            display: none;
+            position: absolute;
+        }
+
+        ul li:hover{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+
+    <script>
+        document.addEventListener("contextmenu",function(event){
+
+            event.preventDefault()
+            list.style.display="block"
+
+            var x=event.clientX
+            var y=event.clientY
+
+            if(x>=document.documentElement.clientWidth-list.offsetWidth){
+                x=document.documentElement.clientWidth-list.offsetWidth
+            }
+
+            if(y>=document.documentElement.clientHeight-list.offsetHeight){
+                y=document.documentElement.clientHeight-list.offsetHeight
+            }
+
+            list.style.left=x+"px"
+            list.style.top=y+"px"
+
+        })
+
+        document.addEventListener("click",function(){
+            list.style.display="none"
+        })
+
+
+        list.onclick=function(evt){
+            console.log("list",evt.target)
+            if(evt.target.className==="aaaa"){//事件委托，从父盒子知道触发哪个元素
+
+            }
+       
+        }
+
+    </script>
+</body>
+</html>

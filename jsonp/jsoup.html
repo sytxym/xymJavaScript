@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="mybtn">jsonp</button>
+    <script>
+
+        // fetch("https://i.maoyan.com/api/mmdb/movie/v3/list/hot.json?ct=%E4%B8%8A%E6%B5%B7&ci=10&channelId=4").then(res => res.json())
+        //     .then(res => {
+        //         console.log(res)
+        //     }).catch(err=>{
+        //         console.log(err)
+        //     })
+
+
+        /*
+        同源策略 ： 同域名  同端口号 同协议
+        不符合同源策略，浏览器为了安全，会阻止请求
+        */
+
+        /*
+        跨域解决：
+         1.cors方式 由后端设置：http://localhost:8080或者*
+         2.jsonp方式：前后端必须协作  
+        */
+
+        /*jsonp原理: 动态创建script标签，src属性指向没有跨域限制
+           指向一个接口，接口返回格式一定是****()函数表达式 */
+        function test(obj) {
+            console.log(obj)
+        }
+
+
+        mybtn.onclick = function () {
+            // var oscript = document.createElement("script")
+            // oscript.src = "01.txt"//未来地址
+            // document.body.appendChild(oscript)
+
+            var oscript = document.createElement("script")
+            oscript.src = `https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=test`//jsonp的接口地址
+            document.body.appendChild(oscript)
+
+
+            oscript.onload=function(){
+                oscript.remove()//每次创建的script进行移除
+            }
+        }
+
+
+        /* 
+        注意点
+        1.后端接口形式必须是表达式，需要后端配合
+        2.json 缺点
+            （1）每次请求会创建script标签，需要手动删除
+            （2）只能get请求，不能post put delete    
+        */
+
+    </script>
+
+<!-- 
+    <script src="01.txt">
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <button id="btn_baidu">跳转到百度</button>
+    <button id="reload">刷新</button>
+    <button id="openTag">打开新的标签页</button>
+    <button id="closePage">关闭当前页面</button>
+    <button id="go_to">前进到js-三元运算符</button>
+    <button id="save">本地存储</button>
+
+    <br>
+    <button id="scrollTop" style="margin-top: 1000px; width: 100px; height: 100px;">滚动到顶部</button>
+    <script>
+        //浏览器可视尺寸
+        var width = window.innerWidth//获取浏览器可视宽度
+        var height = window.innerHeight//高度
+        console.log(width, innerHeight)
+
+        //浏览器的弹出框
+        btn.onclick = function () {
+            alert("用户名不正确")
+        }
+
+        btn.onclick = function () {
+            var isDelete = confirm("你确定删除吗？")
+            if (isDelete) {
+                alert("已经删除了")
+            }
+        }
+
+        btn.onclick = function () {
+            var res = prompt("请输入用户名")
+            alert(res)
+        }
+
+        //浏览器的地址信息
+        console.log(window.location.href)//获取当前的地址
+
+        //跳转地址
+        btn_baidu.onclick = function () {
+            location.href = "http://www.baidu.com"
+        }
+
+        //重新加载
+        reload.onclick = function () {
+            location.reload()
+        }
+
+        //重点：页面加载资料完毕事件
+        window.onload = function () {
+            alert("页面已经加载完成")
+        }
+
+        //改变窗口大小执行
+        window.onresize = function () {
+            console.log("onresize")
+        }
+
+        //浏览器滚动执行事件
+        window.onscroll = function () {
+            console.log("documentElement滚动", window.document.documentElement.scrollTop)//滚动的距离
+            console.log("body滚动了", window.document.body.scrollTop)//滚动的距离（兼容低版本浏览器,两种方式都用）
+            console.log("body滚动了", window.document.documentElement.scrollLeft)//横向滚动的距离
+        }
+
+        //滚动到顶部
+        scrollTop.onclick = function () {
+            window.scrollTo(0, 0)
+        }
+
+        //浏览器打开标签页
+        openTag.onclick = function () {
+            window.open("http://www.baidu.com")
+        }
+
+        //关闭当前页面
+        closePage.onclick = function () {
+            window.close()
+        }
+
+        //浏览器的历史记录
+        go_to.onclick = function () {
+            window.location.href = "JS-三元运算符.html"
+            // history.forward()  //加载历史记录中的下一个 URL
+            // history.go(-1)//返回上一个
+            // history.go(2)//前进两个历史页面
+
+        }
+
+    /*  浏览器的本地存储 localStorage 和 sessionStorage
+        localStorage 永久存储
+        sessionStorage 会话存储 */
+        save.onclick = function () {
+            // 存储数据
+            localStorage.setItem("name", "John");
+
+            // 获取数据
+            // var name = localStorage.getItem("name");
+
+            // // 删除数据 
+            // localStorage.removeItem("name");
+
+            // // 清空本地存储
+            // localStorage.clear();
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

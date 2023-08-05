@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="countdownEl"></div>
+    <script>
+        //   实现 JavaScript 倒计时的步骤是:
+
+        // 1. 使用 setInterval() 设置一个定时器, 每秒执行一次
+        // 2. 使用 Date 对象获取当前时间
+        // 3. 计算截止时间与当前时间的差值, 得到剩余秒数
+        // 4. 将剩余秒数转换为`天 时 分 秒`的格式
+        // 5. 在每次定时器执行时, 更新剩余秒数和倒计时
+        // 6. 当剩余秒数小于等于 0 时, 清除定时器
+
+        // 代码实现:
+        function startCountdown(deadline) {
+            function updateCountdown() {
+                let now = new Date().getTime();
+                let diff = deadline - now;
+
+                let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                let hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+                let minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+                let seconds = Math.floor(diff % (1000 * 60) / 1000);
+
+                countdownEl.innerHTML =
+                    `${days}天${hours}时${minutes}分${seconds}秒`;
+
+                if (diff < 0) {
+                    clearInterval(intervalId);
+                }
+            }
+
+       
+            let intervalId = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+
+        startCountdown(new Date("2023 10 1").getTime());//到2023年还有多久，倒计时
+
+    </script>
+</body>
+
+</html>

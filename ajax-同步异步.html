@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr=new XMLHttpRequest()
+        //第三个参数 是否异步 true异步 false同步
+        xhr.open("GET","http://127.0.0.1:5500/%E6%96%87%E4%BB%B6/请求.json",false)
+        xhr.onload=()=>{
+            if(xhr.status===200){
+                console.log(xhr.responseText)
+            }
+        }
+        xhr.send()
+
+        //上面请求异步时，这个代码不会堵塞，会第一时间打印
+        //如果时同步时，代码会等上面请求数据成功后，才能打印
+        console.log("1111111111111111111111")
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // JavaScript中的三元运算符是一种简洁的条件运算符。
+
+        // 它的语法是:
+        // condition ? exprIfTrue : exprIfFalse
+
+        // 这相当于下面的if - else语句:
+        // if (condition) {
+        //     exprIfTrue
+        // } else {
+        //     exprIfFalse
+        // }
+
+        // 例如:
+        let age = 18;
+        let message = age >= 18 ? 'adult' : 'minor';
+        console.log(message); // adult
+
+        // 上面的三元运算符相当于:
+        // let age = 18; 
+        // let message;
+        // if (age >= 18) {
+        //     message = 'adult';
+        // } else {
+        //     message = 'minor'; 
+        // }
+        // console.log(message); // adult
+
+        // 三元运算符很有用, 因为它可以让条件语句变得更加简洁。
+        // 你可以将三元运算符嵌套来实现更复杂的逻辑:
+
+        // ```javascript
+        // let age = 22;
+        // let message = (age >= 18 && age <= 65) ? 'eligible' : 'not eligible';
+        // console.log(message); // eligible
+
+        // 三元运算符从左到右进行计算。
+
+    </script>
+
+    <button id="history_back">历史记录返回</button>
+
+    <script>
+        history_back.onclick=function(){
+            history.back()
+        }
+
+        document.write(history_back.innerHTML)
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

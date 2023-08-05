@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkPasswordStrength(password) {
+            let score = 0;
+
+            // Check length
+            if (password.length > 7) {
+                score += 1;
+            }
+
+            // Check for uppercase letters
+          
+            if (password.match(/[A-Z]/)) {
+                score += 1;
+            }
+
+            // Check for lowercase letters  
+            if (password.match(/[a-z]/)) {
+                console.log("test",password.match(/[a-z]/))
+                score += 1;
+            }
+
+            // Check for numbers
+            if (password.match(/\d/)) {
+                score += 1;
+            }
+
+            // Check for symbols
+            if (password.match(/[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/)) {
+                score += 1;
+            }
+
+            // Check for repeating characters
+            if (!password.match(/(.)\1\1/)) {
+                score += 1;
+            }
+
+            // Check for sequential characters (e.g. 12345) or 
+            // repeated characters (e.g. aaaaa)
+            if (!password.match(/([a-zA-Z0-9]).\1/)) {
+                score += 1;
+            }
+
+            let result = "";
+            if (score <= 3) {
+                result = "Weak";
+            } else if (score >= 4 && score < 6) {
+                result = "Medium";
+            } else {
+                result = "Strong";
+            }
+
+            return {
+                score: score,
+                strength: result
+            };
+        }
+
+        let result = checkPasswordStrength("123qqcom");
+        console.log(result.strength);  // "Strong"
+        console.log(result.score);     // 8
+
+    </script>
+</body>
+
+</html>

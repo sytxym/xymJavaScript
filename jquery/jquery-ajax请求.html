@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <div>
+        <button id="myget">get</button>
+        <button id="mypost">post</button>
+        <button id="myput">put</button>
+        <button id="mypatch">patch</button>
+        <button id="mydelete">delete</button>
+    </div>
+    <script>
+        $("#myget").click(function () {
+            //$.ajax()
+            // $.ajax(
+            //     {
+            //         url: "http://localhost:3000/user",
+            //         async: true,
+            //         data: {
+            //             username: "pp"
+            //         },
+            //         headers: {
+            //         },
+            //         success: function (res) {
+            //             console.log(res)
+            //         },
+            //         error: function (error) {
+            //             console.log(error)
+            //         }
+            //     }
+            // )
+
+            //$.get() 简洁写法
+            $.get("http://localhost:3000/user", {
+                username: "pp"
+            }, function (res) {
+                console.log(res)
+            }).then(res => {
+                console.log(res)
+            })
+
+            //promise版本
+            // $.ajax(
+            //     {
+            //         url: "http://localhost:3000/user",
+            //         async: true,
+            //         data: {
+            //             username: "pp"
+            //         },
+            //         headers: {
+            //         }
+            //     }
+            // ).then(res => {
+            //     console.log(res)
+            // }).catch(err => {
+            //     console.log("err:", err)
+            // })
+        })
+
+        //async await 异步方法用同步写法
+        $("#mypost").click(async function () {
+
+            
+            // var res=await $.ajax({
+            //     url: "http://localhost:3000/user",
+            //     async: true,
+            //     data: {
+            //         username: "2 xym",
+            //         password: "520520"
+            //     },
+            //     // headers:{
+            //     // },
+            //     method: "POST"
+            // })
+            // console.log(res)
+
+            //$.post
+            var res = await $.post("http://localhost:3000/user", {
+                username: "3 xym",
+                password: "520520"
+            })
+            console.log(res)
+        })
+
+
+
+
+        $("#myput").click(function () {
+            $.ajax({
+                url: "http://localhost:3000/user/4",
+                async: true,
+                data: {
+                    username: "woai xieting"
+                },
+                // headers:{
+                // },
+                method: "PUT",
+                success: function (res) {
+                    console.log(res)
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+        })
+
+
+        $("#mypatch").click(function () {
+            $.ajax({
+                url: "http://localhost:3000/user/5",
+                async: true,
+                data: {
+                    username: "woai xieting",
+                },
+                // headers:{
+                // },
+                method: "PATCH",
+                success: function (res) {
+                    console.log(res)
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+        })
+
+
+        $("#mydelete").click(function () {
+            $.ajax({
+                url: "http://localhost:3000/user/4",
+                async: true,
+                // headers:{
+                // },
+                method: "DELETE",
+                success: function (res) {
+                    console.log(res)
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">获取数据</button>
+
+    <ul id="mylist"></ul>
+    <script>
+
+        //https://petstore3.swagger.io/api/v3/pet/2
+
+        btn.onclick=()=>{
+            var xhr=new XMLHttpRequest()
+            xhr.open("get","https://petstore3.swagger.io/api/v3/pet/2")//真实接口地址
+            // xhr.open("get","http://127.0.0.1:5500/%E6%96%87%E4%BB%B6/data.json")//模拟接口数据
+            xhr.send()
+
+            xhr.onload=function(){
+                if(xhr.status===200){
+
+                    var jsondata=JSON.parse(xhr.responseText)//返回的json
+
+                    //这里手动改下json里图片的数据 方便显示图片
+                    jsondata.photoUrls=['https://static.maizuo.com/pc/v5/usr/movie/149ddb9a7f64e06ed474d963cfc6c405.jpg?x-oss-process=image/quality,Q_70',
+                    'https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70',
+                    'https://static.maizuo.com/pc/v5/usr/movie/b6be063ea8bb7d4ecd09299b800fe510.jpg?x-oss-process=image/quality,Q_70']
+                    
+                    render(jsondata)
+                }
+            } 
+        }
+
+        //渲染
+        function render(jsondata){
+            console.log(jsondata)
+            var html=jsondata.photoUrls.map(item=>`
+                <li>
+                    <img src="${item}">
+                    <h1>${jsondata.name}</h1>
+                    </li>
+            `)
+
+            mylist.innerHTML=html.join("")        
+        }
+
+    </script>
+</body>
+</html>

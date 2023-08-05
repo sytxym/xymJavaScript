@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  JavaScript数组有很多有用的方法,这里列举一些常用的:
+
+    1. push():向数组的末尾添加一个或多个元素,并返回新的长度。
+    
+    2. pop():删除数组的最后一个元素,并返回删除的元素。
+    
+    
+    3. shift():删除数组的第一个元素,并返回删除的元素。
+    
+    4. unshift():向数组的开头添加一个或多个元素,并返回新的长度。
+    
+    5. concat():连接两个或更多的数组,返回结果的新数组。
+    
+    6. slice():从某个已有的数组返回选定的元素。
+    
+    7. splice():添加/删除元素,然后返回被删除的元素。
+    
+    8. sort():对数组的元素进行排序。
+    
+    9. reverse():颠倒数组中元素的顺序。
+    
+    10. map():创建一个新数组,其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+    
+    11. filter():创建一个新数组, 其包含通过所提供函数实现的测试的元素。 -->
+
+
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3]
+
+        //push 后面追加元素  返回值：长度
+        var res = arr.push(4, 1, "xym", "ji", "xty")
+        console.log(arr)
+        console.log("返回值", res)
+
+        //push 后面删除元素  返回值删除的元素
+        var respop = arr.pop()
+        console.log(arr)
+        console.log("返回值", respop)
+
+        //unshift 前面追加元素 返回值：长度
+        var resUnshift = arr.unshift("xym")
+        console.log(arr)
+
+        //shift 前面删除元素 返回值删除的这个元素
+        var resShift = arr.shift()
+        console.log(arr)
+        console.log("返回值", resShift)
+
+        // splice 删除
+        // var resSplice=arr.splice(1,1)
+        // console.log(arr)
+        // console.log("返回值",resSplice)
+
+        //splice 增加
+        var arr2 = ["xym", "xty", "xt", "70", "99"]
+        var resSplice = arr2.splice(1, 0, "xiaoming", "test")//从1开始，0代表不删除，添加xiaoming
+        console.log(arr2)
+        console.log("返回值", resSplice)
+
+        //reverse 颠倒数组中元素的顺序。
+        var arr3 = [1, 5, 0, 9]
+        arr3.reverse()
+        console.log(arr3)
+
+
+        //concat拼接 不影响原数组的方法
+        // var arr5=[1,2,3]
+        // var arr6=[4,5,6]
+        // var arr7=arr5.concat(arr6)
+        // console.log(arr5,arr6,arr7)
+
+        //join 将一个数组中的所有元素连接成一个字符串。
+        var arrm = [11, 23, 13, 8, 7]
+        var arr8 = arrm.join("-")
+        document.write(arr8)
+
+        //slice 截取
+        var arr9 = [13, 2, 4, 0, 991]
+        var arr10 = arr9.slice(1, 5)
+        console.log(arr10)
+
+        //indexOf 从左往右 返回指定数值的下标
+        // var n = arr9.indexOf(4, 3)//-1代表没有
+        // console.log(n)
+
+        //lastIndexof 从右往左  返回指定数值的下标
+        var n = arr9.lastIndexOf(4, 2)//-1代表没有
+        console.log(n)
+
+        //sort 排序
+        var arr4 = [11, 23, 13, 8, 7]
+        // arr4.sort()//默认按首位排序
+        // console.log(arr4)
+
+        //写一个回调函数，从小到大排序
+        arr4.sort(function (a, b) {
+            return a - b
+        })
+        console.log(arr4)
+
+        // foreach 遍历
+        var arr11 = ["aa", "bb", "cc", "dd"]
+        arr11.forEach(function (item, index) {
+            console.log(item, index)
+        })
+
+        //map 映射
+        // var arr12=[1,2,3,124,5]
+        // var arr12T=arr12.map(function(item,index){
+        //     console.log("map:",item,index)
+        //     return item*item*item
+        // })
+        // console.log(arr12T)
+
+
+        //filter 过滤
+        var arr13 = [100, 200, 34, 2, 300, 500]
+        var t = arr13.filter(function (item) {
+            return item >= 200
+        })
+        console.log("过滤结果：",t.length,t)
+
+        //ervery 每一个都满足，才返回true
+        // var arr14=[80,90,92,94]
+        // var c=arr14.every(function(item){
+        //     return item>=80
+        // })
+        // console.log(c)
+
+        //some 只要有一个满足，就是返回true
+        // var arr15=[90,90,2,92]
+        // var uy=arr15.some(function(item){
+        //     return item>=90
+        // })     
+        // console.log(uy)
+
+        //find 查找
+        // var gradeArry = [
+        //     {
+        //         name: "语文",
+        //         grade: 90
+        //     },
+        //     {
+        //         name: "数学",
+        //         grade: 99
+        //     },
+        //     {
+        //         name: "英语",
+        //         grade: 100
+        //     }
+        // ]
+
+        // var arr16 = gradeArry.find(function (item) {
+        //     return item.grade === 100
+        // })
+        // console.log(arr16)
+
+        
+        //reduce 叠加
+        var arr17=[1,2,3,4,5,6]
+        var sum=arr17.reduce(function(prev,item){//参数0代表初始值
+            return prev+item
+        },0)    
+        console.log("累加值："+sum)
+
+
+    </script>
+</body>
+
+</html>

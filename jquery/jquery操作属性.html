@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <div id="box" index="1">woaini</div>
+    <input id="checkbox" type="checkbox" name="1">北京
+    <input type="checkbox" name="1">上海
+    <script>
+        /*
+         attr() 推荐操作自定义属性
+         prop() 推荐操作原生自带属性
+        */
+
+        // console.log($("#box").attr("id"))
+        // console.log($("#box").attr("id","box2"))
+
+        // console.log($("#box").attr("index"))
+        // console.log($("#box").attr("index", "2"))
+        
+        // console.log($("#box").removeAttr("index"))
+
+        $("#checkbox").prop("checked", true);
+
+
+    </script>
+</body>
+
+</html>

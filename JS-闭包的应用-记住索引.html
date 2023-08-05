@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+
+    </ul>
+    <script>
+
+        // 1.记住列表的索引
+        var oli = document.querySelectorAll("li")
+        // for (let index = 0; index < oli.length; index++) {
+        //     const element = oli[index];
+        //     element.onclick=function(){
+        //         console.log(index)
+        //     }
+        // }
+
+          for (let index = 0; index < oli.length; index++) {
+            const element = oli[index];
+            element.onclick=function(mindex){
+                return function(){
+                    console.log(1111,mindex)
+                }
+            }(index)//匿名自执行函数
+        }
+
+
+
+    </script>
+</body>
+</html>

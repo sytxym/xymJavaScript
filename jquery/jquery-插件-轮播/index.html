@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.7.0.js"></script>
+    <script src="dist/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="dist/assets/owl.theme.green.css">
+
+    <style>
+        .owl-carousel {
+            width: 600px;
+        }
+
+        .owl-carousel img {
+            height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Set up your HTML -->
+    <div class="owl-carousel owl-theme">
+        <div>
+            <img src="../img/banner2.jpg" alt="">
+        </div>
+        <div> <img src="../img/banner1.jpg" alt=""></div>
+        <div> <img src="../img/banner2.jpg" alt=""> </div>
+        <div><img src="../img/banner1.jpg" alt=""></div>
+    </div>
+
+    <script>
+        var myowl = $(".owl-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000
+        })
+
+        myowl.on('changed.owl.carousel', function (event) {
+            console.log(event.page.index)
+        })
+    </script>
+</body>
+
+</html>

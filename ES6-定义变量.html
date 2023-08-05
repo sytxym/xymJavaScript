@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(a)//var 上面这样调用也不报错
+        // var a="123"
+        // var a="423"
+        // console.log(a)
+
+        
+        //es6 提供 let const
+
+        /* 
+        let与var区别：
+        1.let声明的变量不会发生变量提升,只能在声明后使用
+        2.let变量重名 不允许重复声明 更加严谨，会提示报错
+        3.let块级作用域
+        */
+
+        //let 这样调用会报错
+        // console.log(a)
+
+        //重名问题
+        // let a=100
+        // let a=200
+        // console.log(a)
+
+        //let块级作用域，更加严谨，只能在块级区域调用
+        // if(true){
+        //     let l="567"
+        //     console.log(l)
+        // }
+
+        // console.log(l)
+
+        /* 
+        let与const区别：
+        1.let 变量
+        2.const 常量 不需要改变的
+        */
+
+        //let 可以重新赋值
+        // let name="xym"
+        // name="haha"
+        // console.log(name)
+
+        //const 下面这样不能改变
+        // const name = "xym"
+        // name = "eeahd"
+        // console.log(name)
+
+        //const 修饰对象
+        const obj={
+            name:"xym"
+        }    
+
+        // obj.name="xt"//可以改
+        // obj={name:"xt"}//不可以改
+        console.log(obj)
+
+    </script>
+</body>
+
+</html>

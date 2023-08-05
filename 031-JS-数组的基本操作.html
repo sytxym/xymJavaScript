@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var arr1 = [1, 2, 3, 4, 9]
+
+        console.log(arr1.length)//获取长度
+
+        // arr1.length=0 //清空数组
+
+        //索引
+        var arr2 = ["xym", "wyl", "xty", "xieting"]
+        console.log(arr2[3])//获取第四项
+
+        //遍历
+        for (var i = 0; i < arr2.length; i++) {
+            console.log(arr2[i])
+        }
+
+        
+        //第一种复制数组
+        var arr4 = []
+        arr4 = arr1//这样赋值，指向的是堆的同一个地址，只要改变一个值，两个数组都跟着变了，也就是说一间房配了两张房卡，都可以打开
+        arr4[0] = 111
+        console.log(arr1, arr4)
+
+        //第二种复制数组
+        // var arr4 = []
+        // for (var index = 0; index < arr1.length; index++) {
+        //     arr4[index] = arr1[index];//这样赋值，在堆里有两个不同的地址，这样改值，不会跟着改了，也就是说一间房都是唯一独立的房卡
+        // }
+        // arr4[0] = 111
+        // console.log(arr1, arr4)
+
+    </script>
+</body>
+
+</html>

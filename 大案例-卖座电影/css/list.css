@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+html,body{
+    height: 100%;
+}
+
+h1{
+    margin: 20px;
+}
+
+ul li{
+    overflow: hidden;
+    height: 150px;
+    margin: 10px;
+}
+
+ul li img{
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            width: 500px;
+
+        }
+
+        .header li {
+            flex: 1;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 300px;
+            background: yellow;
+            display: none;
+        }
+
+        .header .active {
+            background: red;
+        }
+
+        .box .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="header">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <ul class="box">
+        <li class="active">内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+        <li>内容4</li>
+    </ul>
+
+
+    <script>
+
+        var oheaderItems = document.querySelectorAll(".header li")
+        var oboxItems = document.querySelectorAll(".box li")
+
+        for (let i = 0; i < oheaderItems.length; i++) {
+
+            var item = oheaderItems[i];
+            //自定义属性，获取每个view点击的下标或索引
+            item.dataset.index = i
+            // item.onclick = handler
+            item.onclick=function(){
+                // handler(this.dataset.index)//没有es6 只能通过自定义属性去记住点击的索引
+                handler(i)//let具有暂存性死区 ，i就是每一项的索引；i就记住了每一个的值，每次循环都会有一个新的变量去操作
+            }
+
+        }
+
+
+        function handler(index) {
+            console.log(index)
+
+            // var index=this.dataset.index
+
+            //样式全部移除
+            for (let i = 0; i < oheaderItems.length; i++) {
+
+                var item = oheaderItems[i]
+                item.classList.remove("active")
+
+                var boxItem=oboxItems[i]
+                boxItem.classList.remove("active")
+            }
+
+            //再添加选中激活样式
+            oheaderItems[index].classList.add("active")
+            oboxItems[index].classList.add("active")
+
+        }
+
+    </script>
+</body>
+
+</html>

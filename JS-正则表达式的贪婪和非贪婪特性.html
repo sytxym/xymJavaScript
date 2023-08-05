@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 正则表达式有两种匹配模式: 贪婪匹配和非贪婪匹配。
+
+        贪婪匹配(Greedy Match):
+
+        - 默认匹配模式。
+        - 尽可能多地匹配。
+
+        非贪婪匹配(Reluctant Match):
+
+        - 使用`?`修饰符。
+        - 尽可能少地匹配。
+ */
+        // 示例:
+
+        const str = "aaaabbaa";
+
+        // 贪婪匹配
+        // const regex = /a+/;
+        // regex.exec(str); // ["aaaa"]
+
+        // 非贪婪匹配
+        const regex = /a+?/;
+        regex.exec(str); // ["a"]
+
+    /*     如上所示, `a+`表示贪婪匹配一个或多个`a`。它会尽可能多地匹配, 得到`["aaaa"]`。
+
+        而`a+?`表示非贪婪匹配一个或多个`a`。它会尽可能少地匹配, 得到`["a"]`。
+
+        非贪婪匹配对于一些场景很有用:
+
+        - 只获取第一个匹配:
+
+        /^.*?$/.exec("hello")[0]; // "h"
+
+        - 获取匹配之间的文本:
+
+        /a.*?b/.exec("acdb")[0]; // "acd"
+
+        总的来说, 贪婪匹配更简单, 但有时会导致意外的匹配结果。非贪婪匹配可以更精确地控制匹配模式。
+
+        需要注意的是, 非贪婪匹配仍然是贪婪的, 只不过它会尽可能少地匹配而已。
+
+        所以, 在使用正则表达式时, 根据实际需求, 选择贪婪匹配还是非贪婪匹配。 */
+    </script>
+
+</body>
+
+</html>

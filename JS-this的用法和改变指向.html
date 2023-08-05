@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // this的用法有很多, 主要有以下几种:
+
+        // 1. 全局this: 指向全局对象(浏览器中是window对象)
+
+        // console.log(this); // window
+
+        // 2. 函数this: 指向调用该函数的对象
+
+        // function f1() {
+        //     console.log(this); // window 
+        // }
+        // f1();
+
+        // let obj = {
+        //     f2: function () {
+        //         console.log(this); // obj
+        //     }
+        // }
+        // obj.f2();
+
+        // 3. 构造函数this: 指向新创建的对象实例
+
+        // function Person(name) {
+        //     this.name = name;
+        // }
+        // let p = new Person('John');
+        // console.log(p.name); // John
+
+        // 4. 方法this: 指向调用该方法的对象
+
+        // let obj = {
+        //     name: 'John',
+        //     printName: function () {
+        //         console.log(this.name); // John
+        //     }
+        // }
+        // obj.printName();
+
+        // 5. 箭头函数this: 指向定义时的this, 不受调用方式影响
+
+        // let obj = {
+        //     name: 'John',
+        //     printName: () => {
+        //         console.log(this.name); // undefined
+        //     }
+        // }
+        // obj.printName();
+
+
+
+
+        // 6. bind()、call()、apply(): 可以改变this指向
+
+        function f(a,b) {
+            console.log(this.name,a,b);
+        }
+
+        var obj={ name: 'John' }
+        f.call(obj,1,3) // this由window变成了obj对象  将参数按顺序传给函数。参数列表长度固定
+
+        var obj2={ name: 'Jane'}
+        f.apply(obj2,[1,3]) // Jane this由window变成了obj2对象 将参数作为数组传给函数 参数列表长度可变,可以是数组
+        
+        var obj1={ name: 'Jack' }
+        var fun1=f.bind(obj1,1,5) // Jack  不会调用原函数,只是返回一个绑定了this的新函数。
+        fun1()//要手动调用
+
+        // 所以总的来说, this的指向主要取决于函数的调用方式。
+
+    </script>
+</body>
+
+</html>

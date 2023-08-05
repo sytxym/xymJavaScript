@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <h1>top</h1>
+        <div>22222222</div>
+    </div>
+
+    <div id="center">
+        <h2>center</h2>
+    </div>
+
+    <script>
+        /* 
+            你提醒我了, jQuery的节点操作还包括以下方法:
+    
+            - `append()` - 将元素添加到另一个元素的子元素列表末尾
+    
+            $("#parent").append("<div>new div</div>");
+    
+            - `prepend()` - 将元素添加到另一个元素的子元素列表开头
+    
+            $("#parent").prepend("<div>new div</div>");
+    
+            - `after()` - 在另一个元素之后插入内容
+    
+            $("#sibling").after("<div>new div</div>");
+    
+            - `before()` - 在另一个元素之前插入内容
+    
+            $("#sibling").before("<div>new div</div>");
+    
+            - `insertAfter()` - 将元素插入到另一个元素之后
+    
+            $("<div>new div</div>").insertAfter("#sibling");
+    
+            - `insertBefore()` - 将元素插入到另一个元素之前
+    
+            $("<div>new div</div>").insertBefore("#sibling");
+    
+            这些方法可以让你方便地添加、插入新元素。
+    
+            还有一些高级方法:
+    
+            - `wrap()` - 包装元素
+                - `wrapAll()` - 包装所有匹配元素
+                - `unwrap()` - 移除包装元素
+    
+            希望这对你有帮助!如果还有任何问题, 欢迎随时问我。
+    
+            总的来说, jQuery提供了非常丰富的节点操作方法, 可以方便地实现DOM遍历和元素操作。 */
+
+
+
+
+        // 练习
+        //append
+        // var odiv=$("<div>hello</div>").html("<b>xxxxx</b>").addClass("myclass")
+        // $("#box").append(odiv)
+
+        //appendTo
+        // var odiv = $("<div>").html("<b>xxxxx</b>")
+        //     .addClass("myclass").css("background", "red")
+        //     .appendTo($("#box"))
+
+
+        //prepend
+        // var odiv = $("<div>").html("<b>xxxxx</b>")
+        // .addClass("myclass").css("background", "red")
+        // $("#box").prepend(odiv)
+
+
+        //prependTo
+        // var odiv = $("<div>").html("<b>xxxxx</b>")
+        //     .addClass("myclass").css("background", "red").prependTo("#box")
+
+        //before在节点前面插入
+        // var odiv=$("<div>hello</div>")
+        // $("#box").before(odiv)
+
+        //after 在节点后面插入
+        // var odiv=$("<div>hello</div>")
+        // $("#box").after(odiv)
+
+
+        // insertAfter
+        // var odiv = $("<div>hello</div>")
+        // odiv.insertAfter($("#box"))
+
+
+        //remove 移除自己
+        // $("#box div").eq(0).remove()//把第一个div移除
+
+        
+        //清空内部
+        // $("#box").empty()
+
+
+        //replaceWith
+        // var odiv=$("<div>new div</div>")
+        // $("#box h1").replaceWith(odiv)
+
+        //replaceAll
+        // var odiv=$("<div>new div</div>")
+        // odiv.replaceAll($("#box h1"))
+
+        //clone() 复制 clone(true) true是否克隆事件 
+        $("#box").clone(true).css("color","red").insertBefore($("#center"))
+
+
+    </script>
+</body>
+
+</html>

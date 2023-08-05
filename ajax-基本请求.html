@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  ajax  全称：asyc javascript and xml （xml也是跟hmtl相似，也是闭合标签）
+
+
+        /* 完整请求 */
+
+        // 1. 创建XHR new XMLHttpRequest()
+        var xhr=new XMLHttpRequest()
+        console.log(xhr)
+
+        //2.配置 open(请求方式，请求地址，是否异步)
+        // xhr.open("GET","http://127.0.0.1:5500/%E6%96%87%E4%BB%B6/%E8%AF%B7%E6%B1%82.txt",true)
+        xhr.open("GET","https://petstore3.swagger.io/api/v3/pet/3",true)
+
+        //3.接收数据
+
+        //第一种：如果需要跟踪请求的进度,使用 onreadystatechange。
+        // xhr.onreadystatechange=function(){
+        //     // console.log(xhr.readyState)
+        //     if(xhr.readyState===4&& xhr.status === 200){//响应解析完成，并且请求成功
+        //         console.log(xhr.responseText)
+        //     }else if(xhr.readyState==4&& xhr.status===404){//请求失败
+        //         console.log("没有找到这个页面")
+        //         // location.href="http://www.baidu.com"
+        //     }
+        // }
+        
+
+        // 第二种： readyState===4才会进入onload，不需要跟踪请求的话，可以用这种简洁写法
+        xhr.onload=()=>{
+            if(xhr.status===200){
+                // console.log(JSON.parse(xhr.responseText))
+                document.write(xhr.responseText)
+            }
+           
+        }   
+
+     
+        //4.发送请求
+        xhr.send()
+
+
+    </script>
+</body>
+</html>

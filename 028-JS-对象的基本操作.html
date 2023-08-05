@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //增
+        var obj = {}
+        obj.name = "123"
+        obj.age = 18
+
+
+
+        //查
+        document.write("name:" + obj.name)
+
+        //改
+        obj.age = 20
+        document.write("<br>age:" + obj.age)
+
+        //删
+        // obj.name="" //删除属性值
+        delete obj.name //属性名、属性值都删除
+        console.log(obj)
+
+
+
+
+
+        // 2-增
+        var obj3 = {}
+        obj3["name"] = "aaa"
+
+        // 查
+        console.log(obj3["name"])
+
+        // 改
+        obj3["name"] = "aaa2"
+
+        //删
+        delete obj3["name"]
+
+    </script>
+</body>
+
+</html>

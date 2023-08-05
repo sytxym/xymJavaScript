@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        #child {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button id="btn">click</button>
+    <button id="btn2">2222</button>
+    <div id="box">
+
+        <div id="child"></div>
+
+    </div>
+
+    <input type="text" name="" id="username">
+
+    <form action="" id="myform">
+        <p>表单</p>
+        <input type="text" id="nickname">
+        <input type="submit" value="提交">
+        <input type="reset" name="" id="">
+    </form>
+
+    <div id="box2">
+        移动端
+    </div>
+
+    <script>
+        //鼠标事件
+        //click    单击
+        //dblclick 双击
+        //contextmenu 右键单击
+        //onmousedown 鼠标按下
+        //onmousemove 鼠标移动
+        //onmouseup 鼠标抬起
+        // mouseover  mouseout  鼠标移入移出
+        // mouseenter  mouseleave  鼠标移入移出
+
+        btn.onclick = function () {
+            console.log("单击")
+        }
+        btn.ondblclick = function () {
+            console.log("双击")
+        }
+
+        btn2.oncontextmenu = function () {
+            console.log("右键单击")
+        }
+
+        // box.onmousedown=function(){
+        //     console.log("鼠标按下")
+        // }
+
+        // box.onmousemove=function(){
+        //     console.log("鼠标移动")
+        // }
+
+        // box.onmouseup=function(){
+        //     console.log("鼠标抬起")
+        // }
+
+
+        // box.onmouseover=function(){
+        //     console.log("移入")
+        // }
+
+        // box.onmouseout=function(){
+        //     console.log("移出")
+        // }
+
+        //onmouseenter和onmouseover区别  ，onmouseenter只在本身执行，不包含子元素
+        box.onmouseenter = function () {
+            console.log("移入")
+        }
+
+        box.onmouseleave = function () {
+            console.log("移出")
+        }
+
+    </script>
+
+
+    <script>
+
+        //键盘事件 onkeydown  onkeyup
+        username.onkeydown = function () {
+            console.log("键盘按下")
+        }
+
+        username.onkeyup = function () {
+            console.log("键盘抬起")
+        }
+
+
+    </script>
+
+    <script>
+        //浏览器事件 scroll resize load 
+
+        //表单事件
+        //focur 获取焦点
+        //blur 失去焦点
+        //change 焦点失去时，内容有改变执行
+        //input 输入内容不一样
+        //submit 提交 reset 重置
+        nickname.onfocus=function(){
+            console.log("获取焦点")
+        }
+
+        nickname.onblur=function(){
+            console.log("失去焦点")
+        }
+
+        nickname.onchange=function(){
+            console.log("失去焦点")
+        }
+
+        nickname.onchange=function(){
+            console.log("焦点失去，内容有改变才执行")
+        }
+
+        nickname.oninput=function(){
+            console.log("内容改变")
+        }
+
+
+        myform.onsubmit=function(){
+            console.log("提交")
+        }
+
+        myform.onreset=function(){
+            console.log("重置")
+        }
+
+    </script>
+
+    <script>
+
+        //触摸事件 用于移动端
+        box2.ontouchstart=function(){//触摸开始
+            console.log("touchstart")
+        }
+
+        box2.ontouchmove=function(){//触摸移动时
+            console.log("ontouchmove")
+        }
+
+        box2.ontouchend=function(){//触摸结束
+            console.log("ontouchend")
+        }
+
+        box2.ontouchcancel=function(){//触摸意外中断 有电话来了，阻断我触摸执行
+            console.log("ontouchcancel")
+        }
+    </script>
+</body>
+
+</html>

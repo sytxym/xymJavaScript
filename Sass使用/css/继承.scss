@@ -1,0 +1,20 @@
+.base{
+    width: 100px;
+    height: 100px;
+    outline: none;
+}
+
+.btn_primary{
+    @extend  .base;//继承公用的属性
+    background-color: red;
+}
+
+.btn_default{
+    @extend  .base;
+    background-color: green;
+}
+
+.btn_warn{
+    @extend  .base;
+    background-color: blue;
+}
